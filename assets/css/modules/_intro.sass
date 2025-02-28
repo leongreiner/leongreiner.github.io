@@ -13,7 +13,12 @@
 
   &--banner
     position: relative
-    height: 475px
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    padding: 2rem
 
     &::before
       content: ""
@@ -35,10 +40,24 @@
 
     h1
       position: relative
-      font-size: 68px
+      font-size: 4.25rem
       font-weight: 900
       line-height: 1
       z-index: 1
+      margin-bottom: 1rem
+
+    h2
+      position: relative
+      font-size: 2rem
+      font-weight: 900
+      line-height: 1
+      z-index: 1
+      margin-bottom: 1rem
+
+    p
+      margin: 0 0 2rem 0
+      font-size: 1.5rem
+      color: #999
 
     button
       position: relative
@@ -75,6 +94,11 @@
       position: absolute
       bottom: 21px
       right: -12px
+      width: 30vw
+      min-width: 200px
+      max-width: 400px
+      height: auto
+      object-fit: contain
 
   &--options
     display: flex
@@ -105,9 +129,10 @@
 
     &--banner
       height: 380px
+      padding: 1.5rem
 
       h1
-        font-size: 55px
+        font-size: 3.5rem
 
       img
         width: 430px
@@ -150,12 +175,19 @@
 
     &--banner
       height: 360px
+      padding: 1rem
 
       h1
-        font-size: 55px
+        font-size: 2.75rem
 
       img
-        display: none
+        position: relative
+        right: auto
+        bottom: auto
+        margin-top: 2rem
+        width: 80%
+        max-width: 300px
+        align-self: center
 
 @media (max-width: 600px) and (max-height: 750px)
 

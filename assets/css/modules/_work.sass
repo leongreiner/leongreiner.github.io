@@ -5,14 +5,14 @@
   max-width: 80%
   height: 100%
   flex-direction: column
-  justify-content: center
   margin: 0 auto
+  padding: 2rem
 
   @media (max-width: 1180px)
     max-width: 100%
 
   h2
-    margin: 0 0 20px 0
+    margin: 0 0 2rem 0
     font-size: 30px
     text-align: center
 
@@ -51,11 +51,12 @@
           width: 150px
           height: 150px
           margin: 0 auto
-          border-radius: 50%
           overflow: hidden
 
           img
             width: 100%
+            height: 100%
+            object-fit: cover
 
         &-left
           top: 50%
@@ -113,6 +114,41 @@
     .slider--prev
       left: 0
 
+  &--grid
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    gap: 2rem
+    width: 100%
+
+    &-item
+      position: relative
+      cursor: pointer
+      transition: transform 0.3s ease
+
+      &:hover
+        transform: translateY(-5px)
+
+      &-image
+        width: 100%
+        height: 250px
+        overflow: hidden
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+      &-title
+        margin-top: 1rem
+        font-size: 1.2rem
+        font-weight: 700
+        color: $white
+
+      &-description
+        margin-top: 0.5rem
+        font-size: 0.9rem
+        color: $muted-gray
+
 @media (max-width: 900px)
 
   .work
@@ -137,9 +173,9 @@
       .slider--prev
         top: 130px
 
-@media (max-width: 767px)
-
+@media (max-width: 768px)
   .work
+    padding: 1rem
 
     &--lockup
 
@@ -161,6 +197,14 @@
       .slider--next,
       .slider--prev
         top: 105px
+
+    &--grid
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+      gap: 1rem
+
+      &-item
+        &-image
+          height: 200px
 
 @media (max-width: 600px)
 
