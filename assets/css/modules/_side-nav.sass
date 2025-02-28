@@ -1,0 +1,48 @@
+.side-nav {
+  position: relative;
+  display: flex;
+  width: 100px;
+  height: 70%;
+  max-height: 750px;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  z-index: 10;
+
+  & > li {
+    position: relative;
+    top: -5px;
+    color: $white;
+    font-size: 6px;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      top: 3px;
+      left: 10px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 300;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  li.is-active {
+    color: $highlight;
+    transition: color .4s ease-in-out;
+
+    span {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .4s ease-in-out;
+    }
+
+    // Optionally, if you no longer want a ::before element on the active item either:
+    &::before {
+      display: none;
+    }
+  }
+}
