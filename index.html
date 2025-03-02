@@ -9,215 +9,69 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <header class="header">
+    <nav class="header--nav">
+      <ul>
+        <li><a href="index.html" class="active">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">
+              Projects <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-content">
+              <a href="projects/magdrop4.html">INSTR</a>
+              <a href="projects/magdrop4.html">MagDrop4</a>
+              <a href="projects/walt.html">WALT</a>
+              <a href="projects/area.html">AREA</a>
+              <a href="projects/dispenser.html">Dispenser Robot</a>
+            </div>
+          </li>        
+        <li><a href="journey.html">Career Journey</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="perspective effect-rotate-left">
-  <div class="container">
-    <div id="viewport" class="l-viewport">
-      <div class="l-wrapper">
-        <nav class="l-side-nav">
-          <ul class="side-nav">
-            <li class="is-active"><a href="#home"><span>About Me</span></a></li>
-            <li><a href="#works"><span>Projects</span></a></li>
-            <li><a href="#about"><span>Experience</span></a></li>
-            <li><a href="#contact"><span>Education</span></a></li>
-            <li><a href="#hire"><span>Contact</span></a></li>
-          </ul>
-        </nav>        
-        <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
-            <div class="intro">
-              <div class="intro--banner">
-                <h1>Hey I'm<br>Leon Greiner</h1>
-                <p style="font-size: 1.5rem; margin-top: -15px; color: #999;">Robotics Engineer Student</p>
-                <h2>Im from Karslruhe</h2>
-                <img src="assets/img/Profile.png" alt="Profile picture of Leon Greiner">
-              </div>
-              <div class="intro--options">
-                <a href="#0">
-                  <h3>Metiew &amp; Smith</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                </a>
-                <a href="#0">
-                  <h3>Fantasy interactive</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                </a>
-                <a href="#0">
-                  <h3>Paul &amp; shark</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="work">
-              <h2>Projects</h2>
-              <div class="work--grid">
-                <a href="#project1" class="work--grid-item">
-                  <div class="work--grid-item-image">
-                    <img src="assets/img/work-victory.jpg" alt="Project 1">
-                  </div>
-                  <h3 class="work--grid-item-title">Project 1</h3>
-                  <p class="work--grid-item-description">Short description of project 1</p>
-                </a>
-                <a href="#project2" class="work--grid-item">
-                  <div class="work--grid-item-image">
-                    <img src="assets/img/work-metiew-smith.jpg" alt="Project 2">
-                  </div>
-                  <h3 class="work--grid-item-title">Project 2</h3>
-                  <p class="work--grid-item-description">Short description of project 2</p>
-                </a>
-                <a href="#project3" class="work--grid-item">
-                  <div class="work--grid-item-image">
-                    <img src="assets/img/work-alex-nowak.jpg" alt="Project 3">
-                  </div>
-                  <h3 class="work--grid-item-title">Project 3</h3>
-                  <p class="work--grid-item-description">Short description of project 3</p>
-                </a>
-                <!-- Add more project items as needed -->
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="about">
-              <div class="about--banner">
-                <h2>We<br>believe in<br>passionate<br>people</h2>
-                <a href="#0">Career
-                  <span>
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                    </g>
-                    </svg>
-                  </span>
-                </a>
-                <img src="assets/img/about-visual.png" alt="About Us">
-              </div>
-              <div class="about--options">
-                <a href="#0">
-                  <h3>Winners</h3>
-                </a>
-                <a href="#0">
-                  <h3>Philosophy</h3>
-                </a>
-                <a href="#0">
-                  <h3>History</h3>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="contact">
-              <div class="contact--lockup">
-                <div class="modal">
-                  <div class="modal--information">
-                    <p>Pawia 5, 31-154 Kraków, Poland</p>
-                    <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a>
-                    <a href="tel:+148126287560">+48 12 628 75 60</a>
-                  </div>
-                  <ul class="modal--options">
-                    <li><a href="#0">Bēhance</a></li>
-                    <li><a href="#0">dribbble</a></li>
-                    <li><a href="mailto:ouremail@gmail.com">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="hire">
-              <h2>You want us to do</h2>
-              <!-- checkout formspree.io for easy form setup -->
-              <form class="work-request">
-                <div class="work-request--options">
-                  <span class="options-a">
-                    <input id="opt-1" type="checkbox" value="app design">
-                    <label for="opt-1">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      App Design
-                    </label>
-                    <input id="opt-2" type="checkbox" value="graphic design">
-                    <label for="opt-2">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Graphic Design
-                    </label>
-                    <input id="opt-3" type="checkbox" value="motion design">
-                    <label for="opt-3">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Motion Design
-                    </label>
-                  </span>
-                  <span class="options-b">
-                    <input id="opt-4" type="checkbox" value="ux design">
-                    <label for="opt-4">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      UX Design
-                    </label>
-                    <input id="opt-5" type="checkbox" value="webdesign">
-                    <label for="opt-5">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Webdesign
-                    </label>
-                    <input id="opt-6" type="checkbox" value="marketing">
-                    <label for="opt-6">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Marketing
-                    </label>
-                  </span>
-                </div>
-                <div class="work-request--information">
-                  <div class="information-name">
-                    <input id="name" type="text" spellcheck="false">
-                    <label for="name">Name</label>
-                  </div>
-                  <div class="information-email">
-                    <input id="email" type="email" spellcheck="false">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <input type="submit" value="Send Request">
-              </form>
-            </div>
-          </li>
-        </ul>
+  <main class="main-content">
+    <section class="intro">
+      <div class="intro--banner">
+        <div class="content-wrapper">
+          <h1>Hey, I'm<br>Leon Greiner</h1>
+          <p class="subtitle">Robotics Engineering Student</p>
+          <div class="bio-text">
+            <p>I'm an M.Sc. student in Robotics, Cognition, Intelligence at TUM,
+              with a solid background in mechanical and software engineering with
+              international experience at UC Berkeley. I'm passionate about applying
+              deep learning and computer vision to deploy intelligent models on
+              mechanical systems, developing innovative solutions for real-world
+              challenges and making the world a more intelligent place.</p>
+            <p class="location">Currently based in Munich, Germany</p>
+          </div>
+        </div>
+        <div class="image-wrapper">
+          <img src="assets/img/Profile.png" alt="Profile picture of Leon Greiner">
+        </div>
+        <div class="social-buttons">
+          <a href="mailto:leon-greiner@t-online.de" rel="noopener noreferrer">
+            <i class="fas fa-envelope"></i>
+            Email
+          </a>
+          <a href="https://github.com/leongreiner" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/leon-greiner" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
+  </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script src="assets/js/functions-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
