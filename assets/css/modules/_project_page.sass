@@ -78,7 +78,7 @@
           left: 50%
           transform: translate(-50%, -50%)
           opacity: 0
-          max-width: 90%
+          max-width: 60%
           max-height: 65vh
           width: auto
           height: auto
@@ -124,7 +124,7 @@
 
       .carousel-indicators
         position: absolute
-        bottom: 2rem
+        bottom: 0rem
         left: 50%
         transform: translateX(-50%)
         display: flex
@@ -193,6 +193,36 @@
         padding: 0.5rem 1rem
         border-radius: 4px
         font-size: 0.9rem
+
+    .github-link
+      text-align: left // Changed from center
+      margin: 2rem 0 3rem
+      max-width: 800px // Match description width
+      margin-left: auto
+      margin-right: auto
+      
+      a
+        display: flex
+        align-items: center
+        padding: 0.5rem 1rem
+        min-width: 100px
+        justify-content: center
+        background: rgba(70, 130, 180, 0.1)
+        border: 1px solid rgba(70, 130, 180, 0.3)
+        border-radius: 4px
+        color: $white
+        text-decoration: none
+        font-size: 1rem
+        transition: all 0.3s ease
+        width: fit-content // Allow button to shrink to content
+
+        &:hover
+          background: rgba(70, 130, 180, 0.2)
+          transform: translateY(-2px)
+
+        i
+          margin-right: 0.5rem
+          font-size: 1.2rem
 
 @media (max-width: 768px)
   .project-page

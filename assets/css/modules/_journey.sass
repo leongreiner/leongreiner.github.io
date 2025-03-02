@@ -84,6 +84,7 @@
   max-width: 1000px
   margin: 0 auto
   padding: 2rem
+  z-index: 1 // Lower z-index for journey content
 
   &--timeline-container
     display: grid
@@ -93,6 +94,7 @@
     margin: 0 auto
     padding: 2rem
     position: relative
+    z-index: 1 // Ensure container is below header
 
     // Central timeline
     &::before
@@ -113,8 +115,24 @@
       height: calc(100% - 4rem)
       margin: 2rem 0
       display: flex
-      flex-direction: column-reverse // Years go from bottom to top
+      flex-direction: column // Removed -reverse
       justify-content: space-between
+
+      // Reverse the order of year markers
+      > :first-child
+        order: 7 // Number of years
+      > :nth-child(2)
+        order: 6
+      > :nth-child(3)
+        order: 5
+      > :nth-child(4)
+        order: 4
+      > :nth-child(5)
+        order: 3
+      > :nth-child(6)
+        order: 2
+      > :nth-child(7)
+        order: 1
 
       .year-marker
         position: relative
@@ -132,13 +150,13 @@
           transform: translateY(-50%)
 
   &--timeline
-    // Change from fixed height to dynamic height based on viewport
-    height: 70vh // Use viewport height instead of fixed pixels
-    min-height: 400px // Set minimum height for very small screens
-    max-height: 800px // Set maximum height for very large screens
+    // Remove fixed height and overflow properties
+    height: auto
+    min-height: auto
+    max-height: none
     position: relative
     padding: 0 20px
-    overflow: hidden
+    overflow: visible
 
     h2
       text-align: center
@@ -149,7 +167,7 @@
       background: rgba(20, 20, 20, 0.95)
       padding: 1rem 0
       margin: 0 0 2rem 0
-      z-index: 1
+      z-index: 2 // Keep section headers above journey content but below dropdown
 
     &.work
       grid-column: 1 // First column
@@ -205,28 +223,14 @@
       content: none
 
     .timeline-scroll
-      height: calc(100% - 70px) // Adjust for header height
-      overflow-y: auto
-      overflow-x: hidden
-      position: relative // Add to enable independent scrolling
-      
-      // Hide scrollbar but keep scrolling functionality 
-      scrollbar-width: none  // Firefox
-      -ms-overflow-style: none  // IE/Edge
+      // Remove scroll properties
+      height: auto
+      overflow: visible
+      position: static
+
+      // Remove scrollbar styles
       &::-webkit-scrollbar
-        display: none  // Chrome/Safari/Opera
-      
-      // Customize scrollbar
-      &::-webkit-scrollbar
-        width: 6px
-        
-      &::-webkit-scrollbar-track
-        background: rgba($white, 0.1)
-        border-radius: 3px
-        
-      &::-webkit-scrollbar-thumb
-        background: rgba($highlight, 0.5)
-        border-radius: 3px
+        display: none
 
   &--item
     display: flex
@@ -348,9 +352,9 @@
       gap: 1rem
 
     &--timeline
-      // Adjust height for mobile screens
-      height: 60vh
-      min-height: 350px
+      // Remove mobile-specific height constraints
+      height: auto
+      min-height: auto
 
       &.work, &.education
         grid-column: 1 // Reset grid columns on mobile

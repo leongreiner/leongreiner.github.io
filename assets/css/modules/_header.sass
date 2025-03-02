@@ -4,7 +4,7 @@
   left: 0
   width: 100%
   background: rgba(20, 20, 20, 0.95)
-  z-index: 100
+  z-index: 9999 // Very high z-index to ensure it's above everything
   padding: 1rem 0
 
   &--logo
@@ -106,34 +106,30 @@
 
     .dropdown
       position: relative
+      z-index: 9999 // Match header z-index
 
       .dropdown-arrow
         display: inline-block
+        transform: rotate(0deg)
         transition: transform 0.3s ease
-        font-size: 0.7em
+        transition-delay: 0s // Reset delay by default
         margin-left: 0.5rem
-
-      &.open .dropdown-arrow
-        transform: rotate(180deg)
-
-      > a::after
-        content: none  // Remove the automatic arrow
+        font-size: 0.7em
+        pointer-events: none // Prevent arrow from interfering with hover
 
       .dropdown-content
-        display: block  // Always show
-        opacity: 0
-        visibility: hidden  // Hide but maintain layout
         position: absolute
-        top: calc(100% + 0.5rem)  // Add some space between button and dropdown
-        left: 0  // Align with left edge of parent
-        transform: translateY(-10px)  // Remove centering transform
-        background: rgba(20, 20, 20, 0.85)  // Increase transparency
+        top: 100%
+        left: 0
+        background: rgba(20, 20, 20, 0.95)
         min-width: 200px
-        padding: 0.5rem 0
         border-radius: 4px
+        z-index: 10000 // Even higher than header
+        opacity: 0
+        visibility: hidden
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
-        box-shadow: 0 2px 10px rgba(36, 36, 36, 0.2)
-        
+        transform: translateY(-10px)
+
         &::before  // Add arrow pointer
           content: ""
           position: absolute
@@ -155,6 +151,18 @@
           &:hover
             background: rgba(70, 130, 180, 0.4)
 
+      // Move hover styles to the dropdown itself
+      &:hover
+        .dropdown-content
+          transition-delay: 0.8s
+          opacity: 1
+          visibility: visible
+          transform: translateY(0)
+
+        .dropdown-arrow
+          transition-delay: 0.8s
+          transform: rotate(180deg)
+
       &.open
         .dropdown-arrow
           transform: rotate(180deg)
@@ -163,6 +171,7 @@
           opacity: 1
           visibility: visible
           transform: translateY(0)
+          z-index: 1001 // Maintain high z-index when open
 
 @media (max-width: 768px)
   .header

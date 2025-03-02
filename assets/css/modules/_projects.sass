@@ -206,16 +206,16 @@
       height: 200px
       position: relative
       overflow: hidden
-      margin-bottom: 1rem // Add space between image and content
-      border-radius: 6px // Add rounded corners to thumbnail container
+      border-radius: 6px
+      background: transparent
+      margin-bottom: 1rem
 
-      img
+      img 
         width: 100%
         height: 100%
-        object-fit: contain
-        background: transparent // Remove dark background from image
-        padding: 0rem
-        border-radius: 6px // Add rounded corners to image
+        object-fit: contain  // Preserves the whole image, but may letterbox
+
+
 
     .content
       background: rgba(20, 20, 20, 0.8)
