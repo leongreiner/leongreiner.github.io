@@ -5,30 +5,27 @@ $(document).ready(function() {
 
   // Handle dropdown interaction
   $('.dropdown > a').click(function(e) {
-    e.preventDefault();
-    const $dropdown = $(this).parent('.dropdown');
-    
-    // If it's a direct click on the Projects link, navigate to projects.html
-    if ($(e.target).closest('a').attr('href') === 'projects.html') {
-      window.location.href = 'projects.html';
-      return;
-    }
-    
-    $dropdown.toggleClass('open');
-    if ($dropdown.hasClass('open')) {
-      setTimeout(() => {
+    // If clicking the arrow or any part of dropdown except main link
+    if ($(e.target).hasClass('dropdown-arrow') || !$(e.target).hasClass('projects-link')) {
+      e.preventDefault();
+      const $dropdown = $(this).parent('.dropdown');
+      $dropdown.toggleClass('open');
+      
+      if ($dropdown.hasClass('open')) {
+        setTimeout(() => {
+          $dropdown.find('.dropdown-content').css({
+            'opacity': '1',
+            'visibility': 'visible',
+            'transform': 'translateY(0)'
+          });
+        }, 100);
+      } else {
         $dropdown.find('.dropdown-content').css({
-          'opacity': '1',
-          'visibility': 'visible',
-          'transform': 'translateY(0)'
+          'opacity': '0',
+          'visibility': 'hidden',
+          'transform': 'translateY(-10px)'
         });
-      }, 100);
-    } else {
-      $dropdown.find('.dropdown-content').css({
-        'opacity': '0',
-        'visibility': 'hidden',
-        'transform': 'translateY(-10px)'
-      });
+      }
     }
   });
 
@@ -80,3 +77,57 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   // Add any other initialization code here if needed
 });
+
+function initializeCarousel() {
+  const carousel = document.querySelector('.carousel-track');
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('img');
+  const indicatorsContainer = document.querySelector('.carousel-indicators');
+  let currentSlide = 0;
+
+  // Create indicators
+  slides.forEach((_, index) => {
+    const indicator = document.createElement('div');
+    indicator.classList.add('indicator');
+    if (index === 0) indicator.classList.add('active');
+    indicator.addEventListener('click', () => goToSlide(index));
+    indicatorsContainer.appendChild(indicator);
+  });
+
+  const indicators = indicatorsContainer.querySelectorAll('.indicator');
+
+  function updateSlides() {
+    // Hide all slides
+    slides.forEach(slide => {
+      slide.style.display = 'none';
+      slide.classList.remove('active');
+    });
+    indicators.forEach(ind => ind.classList.remove('active'));
+
+    // Show current slide
+    slides[currentSlide].style.display = 'block';
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlides();
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlides();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlides();
+  }
+
+  document.querySelector('.next').addEventListener('click', nextSlide);
+  document.querySelector('.prev').addEventListener('click', prevSlide);
+}
+
+document.addEventListener('DOMContentLoaded', initializeCarousel);
