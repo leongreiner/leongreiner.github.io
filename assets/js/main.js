@@ -3,33 +3,37 @@ $(document).ready(function() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   $('.header--nav a[href="' + currentPage + '"]').addClass('active');
 
+  // Handle dropdown hover
+  $('.dropdown').hover(
+    function() {
+      const $dropdown = $(this);
+      $dropdown.data('hoverTimeout', setTimeout(() => {
+        $dropdown.addClass('open');
+      }, 800));
+    },
+    function() {
+      const $dropdown = $(this);
+      clearTimeout($dropdown.data('hoverTimeout'));
+      $dropdown.removeClass('open');
+    }
+  );
+
   // Handle dropdown interaction
   $('.dropdown > a').click(function(e) {
-    // If clicking the arrow or any part of dropdown except main link
-    if ($(e.target).hasClass('dropdown-arrow') || !$(e.target).hasClass('projects-link')) {
+    const $dropdown = $(this).parent('.dropdown');
+    const isArrowClick = $(e.target).hasClass('dropdown-arrow');
+    
+    if (isArrowClick) {
       e.preventDefault();
-      const $dropdown = $(this).parent('.dropdown');
       $dropdown.toggleClass('open');
-      
-      if ($dropdown.hasClass('open')) {
-        setTimeout(() => {
-          $dropdown.find('.dropdown-content').css({
-            'opacity': '1',
-            'visibility': 'visible',
-            'transform': 'translateY(0)'
-          });
-        }, 100);
-      } else {
-        $dropdown.find('.dropdown-content').css({
-          'opacity': '0',
-          'visibility': 'hidden',
-          'transform': 'translateY(-10px)'
-        });
-      }
+      // No need for setTimeout here since we're using CSS transitions
+    } else {
+      // Allow direct navigation to projects.html
+      window.location.href = $(this).attr('href');
     }
   });
 
-  // Close dropdown when clicking outside
+  // Close dropdown and rotate arrow back when clicking outside
   $(document).click(function(e) {
     if (!$(e.target).closest('.dropdown').length) {
       $('.dropdown').removeClass('open');

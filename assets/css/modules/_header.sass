@@ -108,10 +108,13 @@
       position: relative
 
       .dropdown-arrow
+        display: inline-block
+        transition: transform 0.3s ease
         font-size: 0.7em
         margin-left: 0.5rem
-        vertical-align: middle
-        transition: transform 0.3s ease
+
+      &.open .dropdown-arrow
+        transform: rotate(180deg)
 
       > a::after
         content: none  // Remove the automatic arrow
@@ -123,12 +126,12 @@
         position: absolute
         top: calc(100% + 0.5rem)  // Add some space between button and dropdown
         left: 0  // Align with left edge of parent
-        transform: none  // Remove centering transform
+        transform: translateY(-10px)  // Remove centering transform
         background: rgba(20, 20, 20, 0.85)  // Increase transparency
         min-width: 200px
         padding: 0.5rem 0
         border-radius: 4px
-        transition: all 0.3s ease
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease
         box-shadow: 0 2px 10px rgba(36, 36, 36, 0.2)
         
         &::before  // Add arrow pointer
@@ -152,13 +155,14 @@
           &:hover
             background: rgba(70, 130, 180, 0.4)
 
-      &:hover .dropdown-content
-        opacity: 1
-        visibility: visible
-
-      > a:hover .dropdown-arrow,
-      &.open .dropdown-arrow
-        transform: rotate(180deg)
+      &.open
+        .dropdown-arrow
+          transform: rotate(180deg)
+        
+        .dropdown-content
+          opacity: 1
+          visibility: visible
+          transform: translateY(0)
 
 @media (max-width: 768px)
   .header
