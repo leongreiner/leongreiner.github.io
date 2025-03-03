@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Leon Greiner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Intro">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Leon Greiner">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Desktop header (visible on screens > 768px) -->
+  <header class="header desktop-header">
+    <nav class="header--nav">
+      <ul>
+        <li><a href="index.html" class="active">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">
+              Projects <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-content">
+                <a href="projects/instr.html">INSTR</a>
+                <a href="projects/magdrop4.html">MagDrop4</a>
+                <a href="projects/walt.html">WALT</a>
+                <a href="projects/area.html">AREA</a>
+                <a href="projects/dispenser.html">Dispenser Robot</a>
+            </div>
+          </li>        
+        <li><a href="journey.html">Career Journey</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile header with hamburger (visible on screens <= 768px) -->
+  <header class="mobile-header">
+    <div class="mobile-header-wrapper">
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile menu dropdown -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-container">
+        <button class="mobile-close">&times;</button>
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="journey.html">Career Journey</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="intro">
+      <div class="intro--banner">
+        <div class="content-wrapper">
+          <h1>Hey, I'm<br>Leon Greiner</h1>
+          <p class="subtitle">Robotics Engineering Student</p>
+          <div class="bio-text">
+            <p>I'm an M.Sc. student in Robotics, Cognition, Intelligence at TUM,
+              with a solid background in mechanical and software engineering with
+              international experience at UC Berkeley. I'm passionate about applying
+              deep learning and computer vision to deploy intelligent models on
+              mechanical systems, developing innovative solutions for real-world
+              challenges and making the world a more intelligent place.</p>
+            <p class="location">Currently based in Munich, Germany</p>
+          </div>
+        </div>
+        <div class="image-wrapper">
+          <img src="assets/img/Profile.png" alt="Profile picture of Leon Greiner">
+        </div>
+        <div class="social-buttons">
+          <a href="mailto:leon-greiner@t-online.de" rel="noopener noreferrer">
+            <i class="fas fa-envelope"></i>
+            Email
+          </a>
+          <a href="https://github.com/leongreiner" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/leon-greiner" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Add hamburger menu functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hamburger menu toggle
+      const hamburgerBtn = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const closeBtn = document.querySelector('.mobile-close');
+      const body = document.body;
+      
+      // Toggle menu when hamburger is clicked
+      hamburgerBtn.addEventListener('click', function() {
+        hamburgerBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+      });
+      
+      // Close menu when close button is clicked
+      closeBtn.addEventListener('click', function() {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+      });
+      
+      // Close menu when clicking a menu item
+      document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburgerBtn.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    // Fix for mobile zooming issues
+    window.addEventListener('resize', function() {
+      // Reset any potential zoom when navigating back to the page
+      if (document.documentElement.clientWidth === window.innerWidth) {
+        // We're at 100% zoom level
+        return;
+      }
+      
+      // Force reset viewport when zoomed
+      const viewport = document.querySelector('meta[name="viewport"]');
+      if (viewport) {
+        viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+        
+        // Re-enable user scaling after a moment (optional - remove if you want to keep zoom disabled)
+        setTimeout(function() {

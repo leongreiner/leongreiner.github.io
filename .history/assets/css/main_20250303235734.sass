@@ -1,0 +1,42 @@
+// This is the single file output by sass. It is intended to ONLY @import other files.
+
+
+// BASE
+@import 'base/fonts'
+@import 'base/normalize'
+@import 'base/vars'
+@import 'base/selection-colors'
+@import 'base/body-element'
+
+
+// LAYOUTS
+@import 'layouts/grid'
+
+
+// MODULES
+@import 'modules/intro'
+@import 'modules/projects'
+@import 'modules/journey'
+@import 'modules/contact'
+@import 'modules/section'
+@import 'modules/header'
+@import 'modules/side-nav'
+@import 'modules/outer-nav'
+@import 'modules/globals'
+@import "modules/project_page"
+@import 'modules/responsive'
+@import 'modules/mobile-menu'
+
+.main-content
+  margin-top: 0  // Changed from 16px to 0
+  min-height: auto  // Remove minimum height requirement
+  padding: 1rem 1rem
+
+// Mobile-specific fixes for contact page
+@media (max-width: 768px)
+  .contact, .contact-page, section.contact
+    padding-top: 100px !important
+    
+    h1, .page-title, .title
+      margin-top: 20px
+      margin-bottom: 30px
