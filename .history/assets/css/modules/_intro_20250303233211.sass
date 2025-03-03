@@ -1,0 +1,310 @@
+.intro
+  position: relative
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 2rem 0rem
+
+  @media (max-width: 1180px)
+    max-width: 100%
+
+  &--banner
+    display: grid
+    grid-template-columns: 1fr 400px
+    gap: 4rem
+    position: relative
+    padding-top: 0
+    padding-bottom: 0  // Remove bottom padding
+
+    &::before
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      height: 2px
+      background-color: $muted-gray
+      z-index: 1
+      transform: translateY(0)  // Adjust line position
+
+    &::after
+      content: ""
+      position: absolute
+      bottom: -2px
+      left: 0
+      width: 30px
+      height: 4px
+      background-color: $highlight
+      z-index: 2
+      transform: translateY(0)  // Adjust line position
+
+    .content-wrapper
+      max-width: 800px
+
+      h1
+        font-size: 4.25rem
+        font-weight: 900
+        line-height: 1.2
+        margin-bottom: 1rem
+        position: relative
+        height: 10rem // Add fixed height to prevent layout shift
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        overflow: hidden
+        color: rgba(16, 223, 161, 0.8)
+
+        .placeholder
+          visibility: hidden
+          position: absolute
+          top: 0
+          left: 0
+          height: 0
+          overflow: hidden
+          margin: 0
+          padding: 0
+
+        .typed
+          position: relative
+          z-index: 1
+
+        &.typing::after
+          // ...existing typing styles...
+
+      .subtitle
+        font-size: 1.5rem
+        color: $white
+        margin-bottom: 2rem
+
+      .bio-text
+        p
+          font-size: 1.1rem
+          line-height: 1.6
+          color: #bbb
+          margin-bottom: 1.5rem
+
+        .location
+          font-size: 1rem
+          color: #999
+          font-style: italic
+
+    .image-wrapper
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      position: relative
+      margin-bottom: 2px  // Just enough space for the line
+      padding-bottom: 0  // Remove bottom padding
+
+      img
+        width: 100%
+        height: auto
+        max-width: 800px
+        object-fit: contain
+        margin-top: auto
+        display: block  // Remove any default spacing
+
+    .social-buttons
+      position: absolute
+      bottom: -5rem
+      left: 0
+      display: flex
+      gap: 0.75rem  // Reduced gap to accommodate three buttons
+      z-index: 3
+
+      a
+        display: flex
+        align-items: center
+        padding: 0.5rem 1rem  // Slightly reduced padding
+        min-width: 100px     // Ensure consistent button width
+        justify-content: center  // Center the content
+        background: rgba(70, 130, 180, 0.1)
+        border: 1px solid rgba(70, 130, 180, 0.3)
+        border-radius: 4px
+        color: $white
+        text-decoration: none
+        font-size: 1rem
+        transition: all 0.3s ease
+
+        &:hover
+          background: rgba(70, 130, 180, 0.2)
+          transform: translateY(-2px)
+
+        i
+          margin-right: 0.5rem
+          font-size: 1.2rem
+
+  &--options
+    display: flex
+    justify-content: space-between
+    margin: 0
+    padding: 0
+    list-style: none
+
+    & > a
+      max-width: 250px
+      text-decoration: none
+      color: $muted-gray
+      transition: color .2s ease-in-out
+
+      &:hover
+        color: $white
+
+    h3
+      font-size: 16px
+      text-transform: uppercase
+
+    p
+      margin-bottom: 0
+
+@media (max-width: 1024px)
+  .intro
+    &--banner
+      grid-template-columns: 1fr 300px
+      gap: 2rem
+
+      .content-wrapper
+        h1
+          font-size: 3.5rem
+
+@media (max-width: 900px)
+  .intro
+    padding: 1.5rem
+
+    &--banner
+      grid-template-columns: 1fr
+      gap: 2rem
+
+      .content-wrapper
+        h1
+          font-size: 3rem
+
+        .subtitle
+          font-size: 1.25rem
+
+      .image-wrapper
+        order: -1
+        margin-bottom: 2px  // Maintain consistent spacing in mobile view
+        padding-bottom: 3rem  // Adjust padding for mobile
+
+        img
+          max-width: 300px
+
+      &::before,
+      &::after
+        bottom: 0  // Align directly with image
+        transform: translateY(-3rem)  // Adjust line position for mobile
+
+      .social-buttons
+        position: relative
+        bottom: 0
+        margin-top: 2rem
+        justify-content: center
+
+@media (max-width: 767px)
+  .intro
+
+    &--banner
+      height: 305px
+
+      h1
+        font-size: 44px
+
+      img
+        width: 330px
+
+    &--options
+      display: block
+
+      & > a
+        display: block
+        max-width: 100%
+        margin: 0 0 30px 0
+
+        &:last-child
+          margin-bottom: 0
+
+    // Ensure line under image is visible
+    .image-wrapper
+      position: relative
+      margin-bottom: 30px // Add space for line
+      padding-bottom: 2px
+      
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: $highlight
+        z-index: 2
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: $muted-gray
+        z-index: 1
+    
+    // Add line between content and social buttons
+    .content-wrapper
+      position: relative
+      padding-bottom: 30px // Add space for line
+      margin-bottom: 30px // Space after line
+      
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: $highlight
+        z-index: 2
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: $muted-gray
+        z-index: 1
+    
+    // Reposition social buttons to account for the new line
+    .social-buttons
+      margin-top: 0 // Reset the margin since we added padding to content-wrapper
+
+      .content-wrapper
+        h1
+          // Reduce fixed height on mobile to bring elements closer together
+          height: auto !important
+          min-height: 5rem !important // Reduced from 7rem
+          margin-bottom: 0.5rem !important // Reduced from 1rem
+          font-size: 44px
+        
+        .subtitle
+          margin-bottom: 1.5rem !important // Reduced from 2rem
+          font-size: 1.2rem
+
+@media (max-width: 600px)
+  .intro
+    padding: 1rem
+
+    &--banner
+      height: auto
+
+      &::before,
+      &::after
+        display: none
+
+      h1
+        margin-top: 0
+
+    &--options
+      display: none
