@@ -35,9 +35,9 @@
   <main class="main-content">
     <section class="project-page">
       <div class="project-page--header">
-        <h1>WALT</h1>
-        <div class="subtitle">Wheeled Autonomous Locomotion Traveler</div>
-        <div class="year">2024</div>
+        <h1>INSTR</h1>
+        <div class="subtitle">Unknown Object Detection</div>
+        <div class="year">2025</div>
       </div>
 
       <div class="project-page--content">
@@ -47,15 +47,7 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-              <img src="../assets/img/projects/walt.png" alt="WALT Project" class="carousel-slide active">
-              <img src="../assets/img/projects/walt1.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_route.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_leg.gif" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_workspace.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_perception.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/Walt_demonstration.gif" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_line.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_line2.png" alt="WALT Project" class="carousel-slide">
+              <img src="../assets/img/projects/unknown.png" alt="INSTR Project" class="carousel-slide active">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -68,108 +60,16 @@
 
         <div class="description">
           <h2>Overview</h2>
-          <p>An autonomous wheeled quadruped robot that navigates, avoids obstacles, 
-            and climbs stairs in a controlled corridor environment by integrating advanced 
-            perception, real-time path planning, and hybrid locomotion that switches between 
-            driving and walking/climbing modes.</p>
+          <p>A transformer-based approach for pixel-level correspondence that enhances segmentation of 
+            unknown objects in stereo images.</p>
 
-          <h2>Objectives</h2>
-          <p>The WALT project focuses on the design and development of an autonomous quadruped robot capable of both driving and climbing. The main objectives include:</p>
-          <ul>
-            <li><strong>Autonomous Navigation:</strong>  Driving from a start point to an endpoint in controlled environments.</li>
-            <li><strong>Obstacle Avoidance &amp; Stair Climbing:</strong>  Seamlessly switching between driving and climbing modes based on environmental cues.</li>
-            <li><strong>Real-Time Decision-Making:</strong>  Using sensor data (from an RGB camera) to enable dynamic path planning and obstacle detection.</li>
-          </ul>
-
-          <h2>System Architecture</h2>
-          <p>The robot's architecture is designed to integrate multiple systems:</p>
-          <ul>
-            <li>
-              <strong>Perception &amp; Path Planning:</strong> Processes live camera feeds using advanced object detection (via the YOLO11 segmentation model) to identify drivable surfaces and obstacles.
-            </li>
-            <li>
-              <strong>Electronics &amp; Microcontroller:</strong> Executes high-level commands, managing motor control and sensor communication.
-            </li>
-            <li>
-              <strong>Control System:</strong> Translates sensor data into precise actuator commands for smooth and stable locomotion.
-            </li>
-            <li>
-              <strong>Mechanical Design:</strong> Ensures that the hardware (legs and main body) supports the dynamic tasks of driving and climbing.
-            </li>
-          </ul>
-
-          <section id="project-description">
-            <h2>Mechanical Design</h2>
-            <h3>Leg Design &amp; Iterative Prototyping</h3>
-            <ul>
-              <li>
-                <strong>Conceptualization:</strong> The project started with multiple leg prototypes, each improving upon the previous design.
-              </li>
-              <li>
-                <strong>Final Design:</strong> A 2-DOF per leg configuration (with hip pitch and knee joints) allows full independent control and ensures sufficient workspace for walking and climbing.
-              </li>
-              <li>
-                <strong>Gait Cycle Simulation:</strong> Inverse kinematics and workspace analysis were used to develop a stable and efficient gait cycle.
-              </li>
-            </ul>
-          
-            <h3>Main Body</h3>
-            <ul>
-              <li>
-                <strong>Integrated Structure:</strong> The main body was designed to house the microcontroller, battery, smartphone (for camera feed), and securely mount the four legs.
-              </li>
-              <li>
-                <strong>Lightweight &amp; Robust:</strong> A perforated honeycomb pattern reduces weight while maintaining strength and ensuring adequate airflow.
-              </li>
-            </ul>
-          
-            <h2>Electrical Design</h2>
-            <ul>
-              <li>
-                <strong>Motor &amp; Servo Selection:</strong> Detailed performance analyses ensured that selected DC motors and servos met torque and speed requirements with a strong safety margin.
-              </li>
-              <li>
-                <strong>Hybrid Movement Algorithm:</strong> A coordinated algorithm integrates quadruped leg movements with wheel-based locomotion, enabling seamless switching between driving and climbing modes.
-              </li>
-            </ul>
-          
-            <h2>Perception &amp; Path Planning</h2>
-            <ul>
-              <li>
-                <strong>Video Feed &amp; Detection:</strong> A smartphone camera streams live video at 720p/60fps while the YOLO11 model detects floors and stairs in real time.
-              </li>
-              <li>
-                <strong>Path Planning:</strong> A custom algorithm calculates the optimal route by determining the corridor centerline and adjusting for obstacles, ensuring smooth navigation.
-              </li>
-              <li>
-                <strong>High-Level Control:</strong> Turning rate and stair detection parameters are computed and sent via Bluetooth, facilitating accurate maneuvering.
-              </li>
-            </ul>
-          </section>          
-
-          <h2>Results</h2>
-          <ul>
-            <li>  
-              Successfully developed a robust leg mechanism, perception pipeline and integrated control system.
-            </li>
-            <li>
-              Validated the design through simulation and performance analyses, ensuring that the robot can navigate and overcome obstacles.
-            </li>
-          </ul>
-        </div>
-
-        <div class="github-link">
-          <a href="https://github.com/leongreiner/WALT" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-            View Project on GitHub
-          </a>
-        </div>
+          <h2>Currently in progress...</h2>
 
         <div class="tags">
-          <span>Locomotion</span>
           <span>Computer Vision</span>
-          <span>Mechanical Design</span>
-          <span>UC Berkeley</span>
+          <span>Transformer</span>
+          <span>Pixel Correspondence</span>
+          <span>DLR</span>
         </div>
       </div>
     </section>

@@ -86,11 +86,14 @@ function initializeCarousel() {
   const carousel = document.querySelector('.carousel-track');
   if (!carousel) return;
 
-  const slides = carousel.querySelectorAll('img');
+  // Clear existing indicators first
   const indicatorsContainer = document.querySelector('.carousel-indicators');
+  indicatorsContainer.innerHTML = '';  // Add this line to clear existing indicators
+
+  const slides = carousel.querySelectorAll('img');
   let currentSlide = 0;
 
-  // Create indicators
+  // Create indicators based on actual number of slides
   slides.forEach((_, index) => {
     const indicator = document.createElement('div');
     indicator.classList.add('indicator');
@@ -134,4 +137,51 @@ function initializeCarousel() {
   document.querySelector('.prev').addEventListener('click', prevSlide);
 }
 
-document.addEventListener('DOMContentLoaded', initializeCarousel);
+window.onload = function() {
+    initializeCarousel();
+    positionTimelineEntries();
+  };
+
+function positionTimelineEntries() {
+    const timelineStart = new Date('2019-01-01').getTime();
+    const timelineEnd = new Date('2025-12-31').getTime();
+    const timelineDuration = timelineEnd - timelineStart;
+    
+    // Use a reference column (both experience and education columns have the same height)
+    const refColumn = document.querySelector('.timeline-column.experience');
+    const colHeight = refColumn.offsetHeight;
+    
+    document.querySelectorAll('.timeline-column .entry').forEach(entry => {
+      if (!entry.dataset.start || !entry.dataset.end) return;
+      
+      const startDate = new Date(entry.dataset.start).getTime();
+      const endDate = new Date(entry.dataset.end).getTime();
+      
+      // Map dates to positions on the reversed timeline:
+      // The top of the box corresponds to the entry’s end date.
+      // The bottom of the box corresponds to the entry’s start date.
+      const topPosition = ((timelineEnd - endDate) / timelineDuration) * colHeight;
+      const bottomPosition = ((timelineEnd - startDate) / timelineDuration) * colHeight;
+      const height = bottomPosition - topPosition;
+      
+      entry.style.top = `${topPosition}px`;
+      entry.style.height = `${Math.max(height, 150)}px`; // Minimum height for visibility
+    });
+}
+  
+  
+  window.addEventListener('load', function() {
+    initializeCarousel();
+    // Delay positioning slightly to allow dynamic content to settle
+    setTimeout(positionTimelineEntries, 100);
+  });
+  
+
+// Utility function to debounce resize events
+function debounce(func, wait) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, arguments), wait);
+  };
+}

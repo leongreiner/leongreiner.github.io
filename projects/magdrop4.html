@@ -35,8 +35,7 @@
   <main class="main-content">
     <section class="project-page">
       <div class="project-page--header">
-        <h1>WALT</h1>
-        <div class="subtitle">Wheeled Autonomous Locomotion Traveler</div>
+        <h1>MagDrop4</h1>
         <div class="year">2024</div>
       </div>
 
@@ -47,15 +46,13 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-              <img src="../assets/img/projects/walt.png" alt="WALT Project" class="carousel-slide active">
-              <img src="../assets/img/projects/walt1.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_route.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_leg.gif" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_workspace.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_perception.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/Walt_demonstration.gif" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_line.png" alt="WALT Project" class="carousel-slide">
-              <img src="../assets/img/projects/walt_line2.png" alt="WALT Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4.png" alt="MagDrop4 Project" class="carousel-slide active">
+              <img src="../assets/img/projects/magdrop4_InGame_Image1.jpg" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_demo.gif" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_BackofMagDrop4_Image.jpg" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_Magazine_Render_2.png" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_GantryCart_Render.png" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_FSM_final.png" alt="MagDrop4 Project" class="carousel-slide">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -68,106 +65,43 @@
 
         <div class="description">
           <h2>Overview</h2>
-          <p>An autonomous wheeled quadruped robot that navigates, avoids obstacles, 
-            and climbs stairs in a controlled corridor environment by integrating advanced 
-            perception, real-time path planning, and hybrid locomotion that switches between 
-            driving and walking/climbing modes.</p>
+          <p>MagDrop4 is an autonomous Connect4-playing machine that competes on a physical board. 
+            It uses IR sensors to detect human moves, features smart game piece storage, and executes 
+            moves via an electromagnet on a linear rail. Its AI, powered by Minimax with alpha-beta pruning, 
+            selects optimal moves.</p>
 
-          <h2>Objectives</h2>
-          <p>The WALT project focuses on the design and development of an autonomous quadruped robot capable of both driving and climbing. The main objectives include:</p>
+          <h2>Key Highlights</h2>
           <ul>
-            <li><strong>Autonomous Navigation:</strong>  Driving from a start point to an endpoint in controlled environments.</li>
-            <li><strong>Obstacle Avoidance &amp; Stair Climbing:</strong>  Seamlessly switching between driving and climbing modes based on environmental cues.</li>
-            <li><strong>Real-Time Decision-Making:</strong>  Using sensor data (from an RGB camera) to enable dynamic path planning and obstacle detection.</li>
+            <li><strong>Real-Time Interaction:</strong> Uses 7 IR sensors—one per column—to detect human moves.</li>
+            <li><strong>Advanced Game AI:</strong> Implements a Minimax algorithm with Alpha-Beta pruning to deliver challenging gameplay.</li>
+            <li><strong>Precision Mechanical Design:</strong> Features a custom-built linear actuator with a stepper motor, a belt system, and a electromagnet as an gripper for accurate piece placement.</li>
+            <li><strong>Integrated Electrical System:</strong> Controlled and implemented on a closed embedded system using a Raspberry Pi, coordinating sensor inputs, motor control, and overall machine logic.</li>
           </ul>
-
-          <h2>System Architecture</h2>
-          <p>The robot's architecture is designed to integrate multiple systems:</p>
-          <ul>
-            <li>
-              <strong>Perception &amp; Path Planning:</strong> Processes live camera feeds using advanced object detection (via the YOLO11 segmentation model) to identify drivable surfaces and obstacles.
-            </li>
-            <li>
-              <strong>Electronics &amp; Microcontroller:</strong> Executes high-level commands, managing motor control and sensor communication.
-            </li>
-            <li>
-              <strong>Control System:</strong> Translates sensor data into precise actuator commands for smooth and stable locomotion.
-            </li>
-            <li>
-              <strong>Mechanical Design:</strong> Ensures that the hardware (legs and main body) supports the dynamic tasks of driving and climbing.
-            </li>
-          </ul>
-
-          <section id="project-description">
-            <h2>Mechanical Design</h2>
-            <h3>Leg Design &amp; Iterative Prototyping</h3>
-            <ul>
-              <li>
-                <strong>Conceptualization:</strong> The project started with multiple leg prototypes, each improving upon the previous design.
-              </li>
-              <li>
-                <strong>Final Design:</strong> A 2-DOF per leg configuration (with hip pitch and knee joints) allows full independent control and ensures sufficient workspace for walking and climbing.
-              </li>
-              <li>
-                <strong>Gait Cycle Simulation:</strong> Inverse kinematics and workspace analysis were used to develop a stable and efficient gait cycle.
-              </li>
-            </ul>
-          
-            <h3>Main Body</h3>
-            <ul>
-              <li>
-                <strong>Integrated Structure:</strong> The main body was designed to house the microcontroller, battery, smartphone (for camera feed), and securely mount the four legs.
-              </li>
-              <li>
-                <strong>Lightweight &amp; Robust:</strong> A perforated honeycomb pattern reduces weight while maintaining strength and ensuring adequate airflow.
-              </li>
-            </ul>
-          
-            <h2>Electrical Design</h2>
-            <ul>
-              <li>
-                <strong>Motor &amp; Servo Selection:</strong> Detailed performance analyses ensured that selected DC motors and servos met torque and speed requirements with a strong safety margin.
-              </li>
-              <li>
-                <strong>Hybrid Movement Algorithm:</strong> A coordinated algorithm integrates quadruped leg movements with wheel-based locomotion, enabling seamless switching between driving and climbing modes.
-              </li>
-            </ul>
-          
-            <h2>Perception &amp; Path Planning</h2>
-            <ul>
-              <li>
-                <strong>Video Feed &amp; Detection:</strong> A smartphone camera streams live video at 720p/60fps while the YOLO11 model detects floors and stairs in real time.
-              </li>
-              <li>
-                <strong>Path Planning:</strong> A custom algorithm calculates the optimal route by determining the corridor centerline and adjusting for obstacles, ensuring smooth navigation.
-              </li>
-              <li>
-                <strong>High-Level Control:</strong> Turning rate and stair detection parameters are computed and sent via Bluetooth, facilitating accurate maneuvering.
-              </li>
-            </ul>
-          </section>          
-
-          <h2>Results</h2>
-          <ul>
-            <li>  
-              Successfully developed a robust leg mechanism, perception pipeline and integrated control system.
-            </li>
-            <li>
-              Validated the design through simulation and performance analyses, ensuring that the robot can navigate and overcome obstacles.
-            </li>
-          </ul>
+          <p>
+            MagDrop4 is a comprehensive project that combines mechanical, electrical, and software engineering to create a fun, responsive, and nearly unbeatable Connect4 playing machine.
+          </p>
         </div>
 
-        <div class="github-link">
-          <a href="https://github.com/leongreiner/WALT" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-            View Project on GitHub
-          </a>
+        <div class="button-container">
+          <div class="github-link">
+            <a href="https://github.com/leongreiner/MagDrop4" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+              View Project on GitHub
+            </a>
+          </div>
+          
+          <div class="github-link">
+            <a href="../assets/documents/Final_Report_MagDrop4.pdf" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-file-pdf"></i>
+              View Project Report
+            </a>
+          </div>
         </div>
 
         <div class="tags">
-          <span>Locomotion</span>
-          <span>Computer Vision</span>
+          <span>Embedded System</span>
+          <span>Control</span>
+          <span>Game AI</span>
           <span>Mechanical Design</span>
           <span>UC Berkeley</span>
         </div>
