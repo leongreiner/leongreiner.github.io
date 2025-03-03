@@ -873,7 +873,6 @@ body {
   grid-template-columns: 1fr 120px 1fr;
   gap: 2rem;
   position: relative;
-  height: 2000px;
   margin-top: 4rem;
 }
 .journey .timeline-center {
