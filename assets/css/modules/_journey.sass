@@ -1,19 +1,20 @@
 // Variables
-$highlight: #4682B4
-$muted-gray: #999
+$highlight: rgba(16, 223, 161, 0.8)
+$muted-gray: #bbb
 $white: #fff
 
 .journey
-  padding: 6rem 2rem 4rem
+  padding: 3rem 2rem 4rem
   max-width: 1200px
   margin: 0 auto
 
   .timeline-container
     display: grid
     grid-template-columns: 1fr 120px 1fr
-    gap: 2rem
+    gap: 1rem
     position: relative
     height: 800px  // Adjust this value based on your timeline range
+    margin-top: 80px // Add space below headers
 
   .timeline-center
     position: relative
@@ -27,8 +28,39 @@ $white: #fff
       transform: translateX(-50%)
       width: 2px
       height: 100%
-      background: $highlight
+      background: rgba(70, 130, 180, 0.8)
       opacity: 0.5
+
+    .years
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: 100%
+      text-align: center
+      position: relative
+      z-index: 2
+
+      .year
+        color: $highlight
+        font-weight: bold
+        padding: 0.5rem 0
+        position: relative
+
+        &::before, &::after
+          content: ''
+          position: absolute
+          top: 50%
+          width: 10px
+          height: 2px
+          background: $highlight
+
+        &::before
+          right: 100%
+          margin-right: 0.5rem
+
+        &::after
+          left: 100%
+          margin-left: 0.5rem
 
   .timeline-column
     position: relative
@@ -42,31 +74,31 @@ $white: #fff
       margin-bottom: 3rem
       text-align: center
       position: absolute
-      top: 0
+      top: -100px // Move headers up
       width: 100%
 
     .entry
       position: absolute
       width: calc(100% - 4rem)
-      background: rgba(70, 130, 180, 0.1)
-      border: 1px solid rgba(70, 130, 180, 0.3)
+      background: rgba(70, 130, 180, 0.4)
       border-radius: 8px
-      padding: 1.5rem
+      padding: 0.8rem 1.2rem // Reduced padding
       box-sizing: border-box
       transition: all 0.3s ease
       min-height: 50px
 
       .content
         h3
-          font-size: 1.3rem
-          color: $white
-          margin-bottom: 0.5rem
+          font-size: 1.2rem // Slightly smaller
+          margin: 0 // Remove top margin
+          line-height: 1.2
         .place
           color: $highlight
-          margin-bottom: 0.5rem
+          margin: 0.2rem 0 // Reduced margins
         .description
           color: $muted-gray
           font-size: 0.9rem
+          margin: 0.2rem 0 // Reduced margins
 
       .date
         font-size: 0.9rem
@@ -86,6 +118,33 @@ $white: #fff
     .entry
       left: 2rem
       text-align: left
+
+  .resume-button
+    display: flex
+    justify-content: center
+    margin-top: 3rem
+    padding-top: 2rem
+    border-top: 1px solid rgba($highlight, 0.2)
+
+    a
+      display: flex
+      align-items: center
+      padding: 0.8rem 1.5rem
+      background: rgba(70, 130, 180, 0.1)
+      border: 1px solid rgba(70, 130, 180, 0.3)
+      border-radius: 4px
+      color: $white
+      text-decoration: none
+      font-size: 1rem
+      transition: all 0.3s ease
+
+      &:hover
+        background: rgba(70, 130, 180, 0.2)
+        transform: translateY(-2px)
+
+      i
+        margin-right: 0.8rem
+        font-size: 1.2rem
 
 // Responsive styles
 @media (max-width: 768px)
