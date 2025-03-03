@@ -5,7 +5,7 @@ $white: #fff
 
 .journey
   padding: 3rem 2rem 4rem
-  max-width: 1200px
+  max-width: 90vw
   margin: 0 auto
 
   .timeline-container
@@ -13,7 +13,7 @@ $white: #fff
     grid-template-columns: 1fr 120px 1fr
     gap: 1rem
     position: relative
-    height: 800px  // Adjust this value based on your timeline range
+    height: 3000px  // Adjust this value based on your timeline range
     margin-top: 80px // Add space below headers
 
   .timeline-center
@@ -88,24 +88,68 @@ $white: #fff
       min-height: 50px
 
       .content
+        .title-row
+          display: flex
+          justify-content: space-between
+          align-items: baseline
+          width: 100%
+          margin-bottom: 0.5rem
+
+          h3
+            font-size: 1.2rem
+            margin: 0
+            line-height: 1.2
+            color: $white
+            font-weight: bold
+
+          .entry-date
+            font-size: 0.9rem
+            color: $muted-gray
+            white-space: nowrap
+            margin-left: 1rem
+
         h3
           font-size: 1.2rem // Slightly smaller
           margin: 0 // Remove top margin
           line-height: 1.2
+          display: flex
+          justify-content: space-between
+          align-items: center
+
+          .date
+            font-size: 0.9rem
+            color: $muted-gray
+            font-weight: normal
+
         .place
           color: $highlight
           margin: 0.2rem 0 // Reduced margins
+          font-size: 1.1rem
+          font-weight: bold
+
         .description
           color: $muted-gray
           font-size: 0.9rem
           margin: 0.2rem 0 // Reduced margins
+          margin-bottom: 0.8rem
 
+        .skills
+          display: flex
+          gap: 0.4rem
+          flex-wrap: wrap
+          margin-top: auto
+
+          span
+            background: transparent
+            padding: 0.2rem 0.6rem
+            border-radius: 4px
+            font-size: 0.8rem
+            background: transparent
+            border: 1px solid $highlight
+
+      // Remove old .date styles since we moved it
       .date
-        font-size: 0.9rem
-        color: $highlight
-        margin-top: 0.5rem
-        .start, .end
-          font-weight: bold
+        display: none
 
   // Positioning for experience entries (left side)
   .experience
@@ -113,11 +157,20 @@ $white: #fff
       right: 2rem
       text-align: right
 
+      .title-row
+        flex-direction: row-reverse // Reverse order for experience entries
+
+      .skills
+        justify-content: flex-end // Add this to align skills to the right
+
   // Positioning for education entries (right side)
   .education
     .entry
       left: 2rem
       text-align: left
+
+      .skills
+        justify-content: flex-start // Optional: explicitly set left alignment for education
 
   .resume-button
     display: flex

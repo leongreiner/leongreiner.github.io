@@ -866,7 +866,7 @@ body {
 
 .journey {
   padding: 3rem 2rem 4rem;
-  max-width: 1200px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 .journey .timeline-container {
@@ -874,7 +874,7 @@ body {
   grid-template-columns: 1fr 120px 1fr;
   gap: 1rem;
   position: relative;
-  height: 800px;
+  height: 3000px;
   margin-top: 80px;
 }
 .journey .timeline-center {
@@ -948,35 +948,84 @@ body {
   transition: all 0.3s ease;
   min-height: 50px;
 }
+.journey .timeline-column .entry .content .title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.journey .timeline-column .entry .content .title-row h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: bold;
+}
+.journey .timeline-column .entry .content .title-row .entry-date {
+  font-size: 0.9rem;
+  color: #bbb;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
 .journey .timeline-column .entry .content h3 {
   font-size: 1.2rem;
   margin: 0;
   line-height: 1.2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.journey .timeline-column .entry .content h3 .date {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-weight: normal;
 }
 .journey .timeline-column .entry .content .place {
   color: rgba(16, 223, 161, 0.8);
   margin: 0.2rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 .journey .timeline-column .entry .content .description {
   color: #bbb;
   font-size: 0.9rem;
   margin: 0.2rem 0;
+  margin-bottom: 0.8rem;
+}
+.journey .timeline-column .entry .content .skills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.journey .timeline-column .entry .content .skills span {
+  background: transparent;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(16, 223, 161, 0.8);
 }
 .journey .timeline-column .entry .date {
-  font-size: 0.9rem;
-  color: rgba(16, 223, 161, 0.8);
-  margin-top: 0.5rem;
-}
-.journey .timeline-column .entry .date .start, .journey .timeline-column .entry .date .end {
-  font-weight: bold;
+  display: none;
 }
 .journey .experience .entry {
   right: 2rem;
   text-align: right;
 }
+.journey .experience .entry .title-row {
+  flex-direction: row-reverse;
+}
+.journey .experience .entry .skills {
+  justify-content: flex-end;
+}
 .journey .education .entry {
   left: 2rem;
   text-align: left;
+}
+.journey .education .entry .skills {
+  justify-content: flex-start;
 }
 .journey .resume-button {
   display: flex;
