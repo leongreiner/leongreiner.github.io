@@ -1,3 +1,8 @@
+// Variables
+$highlight: #4682B4
+$muted-gray: #999
+$white: #fff
+
 .journey
   padding: 6rem 2rem 4rem
   max-width: 1200px
@@ -8,15 +13,13 @@
     grid-template-columns: 1fr 120px 1fr
     gap: 2rem
     position: relative
-    //height: 2000px // Changed from min-height to fixed height
-    margin-top: 4rem // Add space for headers
+    height: 800px  // Adjust this value based on your timeline range
 
   .timeline-center
     position: relative
-    height: 100% // Use full height
+    height: 100%
     display: flex
     justify-content: center
-    min-height: 1500px
 
     .line
       position: absolute
@@ -27,51 +30,11 @@
       background: $highlight
       opacity: 0.5
 
-    .years
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-      height: 100%
-      padding: 2rem 0
-      z-index: 1
-
-      .year
-        color: $highlight
-        font-weight: bold
-        position: relative
-        padding: 0.5rem 0
-        text-align: center
-        &::before
-          content: ''
-          position: absolute
-          top: 50%
-          width: 10px
-          height: 2px
-          background: $highlight
-          right: 100%
-          margin-right: 0.5rem
-        &::after
-          content: ''
-          position: absolute
-          top: 50%
-          width: 10px
-          height: 2px
-          background: $highlight
-          left: 100%
-          margin-left: 0.5rem
-
-      .quarter
-        color: $highlight
-        opacity: 0.5
-        font-size: 0.9rem
-        padding: 0.25rem 0
-
   .timeline-column
     position: relative
-    height: 100%
-    min-height: 1500px
-    margin-top: 2rem
-    padding-top: 60px // Space for header
+    padding-top: 60px  // Space for the header (h2)
+    min-height: 600px  // Ensure enough space for entries
+    overflow: visible
 
     h2
       color: $highlight
@@ -81,57 +44,50 @@
       position: absolute
       top: 0
       width: 100%
-      // ...rest of existing h2 styles...
 
     .entry
       position: absolute
       width: calc(100% - 4rem)
       background: rgba(70, 130, 180, 0.1)
+      border: 1px solid rgba(70, 130, 180, 0.3)
       border-radius: 8px
       padding: 1.5rem
-      transition: all 0.3s ease
       box-sizing: border-box
-      min-height: 150px
+      transition: all 0.3s ease
+      min-height: 50px
 
       .content
         h3
-          color: $white
           font-size: 1.3rem
-          margin: 0 0 0.5rem
+          color: $white
+          margin-bottom: 0.5rem
         .place
           color: $highlight
           margin-bottom: 0.5rem
         .description
           color: $muted-gray
-          margin-bottom: 1rem
-        .skills
-          display: flex
-          gap: 0.5rem
-          flex-wrap: wrap
-          span
-            background: rgba(70, 130, 180, 0.2)
-            padding: 0.3rem 0.8rem
-            border-radius: 4px
-            font-size: 0.9rem
-            color: $white
+          font-size: 0.9rem
 
       .date
         font-size: 0.9rem
         color: $highlight
-        margin-bottom: 0.5rem
+        margin-top: 0.5rem
         .start, .end
           font-weight: bold
 
-    &.experience .entry
+  // Positioning for experience entries (left side)
+  .experience
+    .entry
       right: 2rem
-      left: auto
       text-align: right
 
-    &.education .entry
+  // Positioning for education entries (right side)
+  .education
+    .entry
       left: 2rem
-      right: auto
       text-align: left
 
+// Responsive styles
 @media (max-width: 768px)
   .journey
     padding: 2rem 1rem
@@ -144,12 +100,8 @@
       display: none
 
     .timeline-column
-      text-align: left !important
-
       .entry
-        .date
-          position: relative
-          left: 0 !important
-          right: 0 !important
-          transform: none
-          margin-bottom: 0.5rem
+        width: 100%
+        left: 0
+        right: 0
+        text-align: left

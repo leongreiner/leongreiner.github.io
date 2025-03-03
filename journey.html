@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="HTML5 website template">
-  <meta name="keywords" content="global, template, html, sass, jquery">
-  <meta name="author" content="Bucky Maler">
+  <meta name="description" content="Career Journey Timeline">
+  <meta name="keywords" content="career, timeline, journey, robotics, education, experience">
+  <meta name="author" content="Leon Greiner">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header class="header">
@@ -16,197 +17,155 @@
       <ul>
         <li><a href="index.html">About Me</a></li>
         <li class="dropdown">
-            <a href="projects.html">
-              Projects <span class="dropdown-arrow">▼</span>
-            </a>
-            <div class="dropdown-content">
-                <a href="projects/instr.html">INSTR</a>
-                <a href="projects/magdrop4.html">MagDrop4</a>
-                <a href="projects/walt.html">WALT</a>
-                <a href="projects/area.html">AREA</a>
-                <a href="projects/dispenser.html">Dispenser Robot</a>
-            </div>
-          </li>          
+          <a href="projects.html">
+            Projects <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="projects/instr.html">INSTR</a>
+            <a href="projects/magdrop4.html">MagDrop4</a>
+            <a href="projects/walt.html">WALT</a>
+            <a href="projects/area.html">AREA</a>
+            <a href="projects/dispenser.html">Dispenser Robot</a>
+          </div>
+        </li>
         <li><a href="journey.html" class="active">Career Journey</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <main class="main-content">
-    <div class="journey">
+    <section class="journey">
+      
       <div class="timeline-container">
-        <!-- Left side - Experience -->
+        <!-- Left Column: Experience -->
         <div class="timeline-column experience">
           <h2>Experience</h2>
-          <div class="entry" data-start="2024-09" data-end="2025-03">
-            <div class="content">
-              <h3>Computer Vision Research</h3>
-              <p class="place">DLR</p>
-              <p class="description">Research Assistant</p>
-              <div class="skills">
-                <span>Deep Learning</span>
-                <span>Computer Vision</span>
-              </div>
-            </div>
-            <div class="date">
-              <span class="start">Sep 2024</span> -
-              <span class="end">Mar 2025</span>
-            </div>
-          </div>
-
-          <div class="entry" data-start="2023-01" data-end="2024-08">
+          <div class="entry" data-start="2019-01" data-end="2019-08">
             <div class="content">
               <h3>Robotics Engineer</h3>
               <p class="place">UC Berkeley</p>
-              <p class="description">Graduate Student Researcher</p>
-              <div class="skills">
-                <span>Robotics</span>
-                <span>ROS</span>
-              </div>
+              <p class="description">Worked on advanced robotics projects.</p>
             </div>
             <div class="date">
-              <span class="start">Jan 2023</span> -
-              <span class="end">Aug 2024</span>
+              <span class="start">Jan 2019</span> - 
+              <span class="end">Aug 2019</span>
             </div>
           </div>
-
-          <div class="entry" data-start="2022-05" data-end="2023-12">
-            <div class="content">
-              <h3>Research Assistant</h3>
-              <p class="place">TUM</p>
-              <p class="description">Robotics Lab</p>
-              <div class="skills">
-                <span>Control</span>
-                <span>Python</span>
-              </div>
-            </div>
-            <div class="date">
-              <span class="start">May 2022</span> -
-              <span class="end">Dec 2023</span>
-            </div>
-          </div>
-
           <div class="entry" data-start="2021-06" data-end="2022-04">
             <div class="content">
               <h3>Engineering Intern</h3>
               <p class="place">Silver Atena</p>
-              <p class="description">Robotics Division</p>
-              <div class="skills">
-                <span>CAD</span>
-                <span>Manufacturing</span>
-              </div>
+              <p class="description">Internship in the robotics division.</p>
             </div>
             <div class="date">
-              <span class="start">Jun 2021</span> -
+              <span class="start">Jun 2021</span> - 
               <span class="end">Apr 2022</span>
             </div>
           </div>
+          <div class="entry" data-start="2022-05" data-end="2023-12">
+            <div class="content">
+              <h3>Research Assistant</h3>
+              <p class="place">TUM</p>
+              <p class="description">Conducted research on robotics and AI.</p>
+            </div>
+            <div class="date">
+              <span class="start">May 2022</span> - 
+              <span class="end">Dec 2023</span>
+            </div>
+          </div>
         </div>
-
-        <!-- Center Timeline -->
+        
+        <!-- Center Column: Timeline Line -->
         <div class="timeline-center">
           <div class="line"></div>
-          <div class="years">
-            <div class="year">2025</div>
-            <div class="year">2024</div>
-            <div class="year">2023</div>
-            <div class="year">2022</div>
-            <div class="year">2021</div>
-            <div class="year">2020</div>
-            <div class="year">2019</div>
-          </div>
         </div>
-
-        <!-- Right side - Education -->
+        
+        <!-- Right Column: Education -->
         <div class="timeline-column education">
           <h2>Education</h2>
-          <div class="entry" data-start="2022-10" data-end="2024-09">
-            <div class="date">
-              <span class="start">Oct 2022</span> -
-              <span class="end">Sep 2024</span>
-            </div>
-            <div class="content">
-              <h3>M.Sc. Robotics</h3>
-              <p class="place">TUM</p>
-              <p class="description">Robotics, Cognition, Intelligence</p>
-              <div class="skills">
-                <span>Robotics</span>
-                <span>AI</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="entry" data-start="2023-08" data-end="2024-05">
-            <div class="date">
-              <span class="start">Aug 2023</span> -
-              <span class="end">May 2024</span>
-            </div>
-            <div class="content">
-              <h3>Exchange Studies</h3>
-              <p class="place">UC Berkeley</p>
-              <p class="description">Mechanical Engineering</p>
-              <div class="skills">
-                <span>Robotics</span>
-                <span>Control</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="entry" data-start="2020-10" data-end="2022-09">
-            <div class="date">
-              <span class="start">Oct 2019</span> -
-              <span class="end">Sep 2022</span>
-            </div>
-            <div class="content">
-              <h3>B.Sc. Mechanical Engineering</h3>
-              <p class="place">TUM</p>
-              <p class="description">Focus on Mechatronics</p>
-              <div class="skills">
-                <span>Mechanics</span>
-                <span>Electronics</span>
-              </div>
-            </div>
-          </div>
-
           <div class="entry" data-start="2019-06" data-end="2019-09">
-            <div class="date">
-              <span class="start">Jun 2019</span> -
-              <span class="end">Sep 2019</span>
-            </div>
             <div class="content">
               <h3>High School Diploma</h3>
               <p class="place">Gymnasium</p>
-              <p class="description">MINT Focus</p>
-              <div class="skills">
-                <span>Math</span>
-                <span>Physics</span>
-              </div>
+              <p class="description">Focused on MINT subjects.</p>
+            </div>
+            <div class="date">
+              <span class="start">Jun 2019</span> - 
+              <span class="end">Sep 2019</span>
+            </div>
+          </div>
+          <div class="entry" data-start="2020-10" data-end="2022-09">
+            <div class="content">
+              <h3>B.Sc. Mechanical Engineering</h3>
+              <p class="place">TUM</p>
+              <p class="description">Studied Mechatronics and Mechanical Systems.</p>
+            </div>
+            <div class="date">
+              <span class="start">Oct 2019</span> - 
+              <span class="end">Sep 2022</span>
+            </div>
+          </div>
+          <div class="entry" data-start="2022-10" data-end="2024-09">
+            <div class="content">
+              <h3>M.Sc. Robotics</h3>
+              <p class="place">TUM</p>
+              <p class="description">Graduate studies in Robotics, Cognition, Intelligence.</p>
+            </div>
+            <div class="date">
+              <span class="start">Oct 2022</span> - 
+              <span class="end">Sep 2024</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><!-- .timeline-container -->
+    </section>
   </main>
-  <style>
-    .journey {
-      /* ...existing code... */
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Timeline positioning script
+    function positionTimelineEntries() {
+      const container = document.querySelector('.timeline-container');
+      const containerHeight = container.offsetHeight;
+      
+      // Define timeline range (January 2019 to January 2025)
+      const timelineStart = new Date("2019-01-01");
+      const timelineEnd   = new Date("2025-01-01");
+      
+      // Calculate total months in timeline range.
+      const totalMonths = (timelineEnd.getFullYear() - timelineStart.getFullYear()) * 12 +
+                          (timelineEnd.getMonth() - timelineStart.getMonth());
+      const pixelsPerMonth = containerHeight / totalMonths;
+      
+      // Helper function: convert YYYY-MM string to month offset.
+      function getMonthOffset(dateStr) {
+        const [year, month] = dateStr.split("-").map(Number);
+        return (year - timelineStart.getFullYear()) * 12 + (month - 1);
+      }
+      
+      document.querySelectorAll('.timeline-column .entry').forEach(entry => {
+        const startStr = entry.dataset.start;
+        const endStr = entry.dataset.end;
+        if (!startStr || !endStr) return;
+        
+        const startOffset = getMonthOffset(startStr);
+        const endOffset = getMonthOffset(endStr);
+        
+        // The top of the entry aligns with its end date.
+        const topPos = containerHeight - (endOffset * pixelsPerMonth);
+        // The bottom aligns with its start date.
+        const bottomPos = containerHeight - (startOffset * pixelsPerMonth);
+        const entryHeight = bottomPos - topPos;
+        
+        entry.style.top = topPos + "px";
+        entry.style.height = (entryHeight > 50 ? entryHeight : 50) + "px";
+      });
     }
-
-    .timeline-column {
-      /* Force a fixed (or minimum) height so that entries can be positioned relative to it */
-      position: relative;
-      min-height: 1500px;
-      margin-top: 2rem;
-    }
-
-    .timeline-center {
-      /* Ensure the center timeline has the same min-height */
-      min-height: 1500px;
-    }
-
-    /* ...existing code... */
-  </style>
-<script src="assets/js/main.js"></script>
+    
+    window.addEventListener('load', positionTimelineEntries);
+    window.addEventListener('resize', positionTimelineEntries);
+  </script>
 </body>
 </html>
