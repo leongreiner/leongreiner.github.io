@@ -15,23 +15,8 @@
   <!-- Desktop header (visible on screens > 768px) -->
   <header class="header desktop-header">
     <nav class="header--nav">
-      <ul>
-        <li><a href="index.html" class="active">About Me</a></li>
-        <li class="dropdown">
-            <a href="projects.html">
-              Projects <span class="dropdown-arrow">▼</span>
-            </a>
-            <div class="dropdown-content">
-                <!-- <a href="projects/dlr.html">dlr</a> -->
-                <a href="projects/magdrop4.html">MagDrop4</a>
-                <a href="projects/walt.html">WALT</a>
-                <a href="projects/area.html">AREA</a>
-                <a href="projects/dispenser.html">Dispenser Robot</a>
-            </div>
-          </li>        
-        <li><a href="journey.html">Career Journey</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <!-- Navigation will be dynamically inserted here -->
+      <ul></ul>
     </nav>
   </header>
 
@@ -50,17 +35,15 @@
       <div class="mobile-menu-container">
         <button class="mobile-close">&times;</button>
         <nav class="mobile-nav">
-          <ul>
-            <li><a href="index.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="journey.html">Career Journey</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+          <!-- Mobile navigation will be dynamically inserted here -->
+          <ul></ul>
         </nav>
+        <!-- Mobile submenu will be dynamically inserted here -->
       </div>
     </div>
   </header>
 
+  <!-- Rest of your content -->
   <main class="main-content">
     <section class="intro">
       <div class="intro--banner">
@@ -99,6 +82,8 @@
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="assets/js/nav-data.js"></script>
+  <script src="assets/js/nav-builder.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/mobile-menu.js"></script>
 

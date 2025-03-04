@@ -21,7 +21,7 @@
             </a>
             <div class="dropdown-content">
                 <!-- Set the active class for the current project page -->
-                <!-- <a href="dlr.html" class="PROJECT_dlr_ACTIVE">dlr</a> -->
+                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">dlr</a>
                 <a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a>
                 <a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a>
                 <a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a>
@@ -59,7 +59,7 @@
           <div class="mobile-submenu">
             <h3>Projects</h3>
             <ul>
-              <!-- <li><a href="dlr.html" class="PROJECT_dlr_ACTIVE">dlr</a></li> -->
+              <!-- <li><a href="dlr.html" class="PROJECT_DLR_ACTIVE">dlr</a></li> -->
               <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
               <li><a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a></li>
               <li><a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a></li>
@@ -74,9 +74,8 @@
   <main class="main-content">
     <section class="project-page">
       <div class="project-page--header">
-        <h1>AREA</h1>
-        <div class="subtitle">Bachelor Thesis: Landing gear design for integration of fuel cells into a UAV</div>
-        <div class="year">2023</div>
+        <h1>MagDrop4</h1>
+        <div class="year">2024</div>
       </div>
 
       <div class="project-page--content">
@@ -86,13 +85,13 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-              <img src="../assets/img/projects/area.png" alt="AREA Project" class="carousel-slide active">
-              <img src="../assets/img/projects/area_alt_Gesamtmodell_3.jpg" alt="AREA Project Complete Model" class="carousel-slide">
-              <img src="../assets/img/projects/area_Landewerk_4.png" alt="AREA Project Landing Gear" class="carousel-slide">
-              <img src="../assets/img/projects/area_Landegestell_Mises.jpg" alt="AREA Project FEM Analysis" class="carousel-slide">
-              <img src="../assets/img/projects/area_Montageplatte_Mises.JPG" alt="AREA Project Mounting Plate" class="carousel-slide">
-              <img src="../assets/img/projects/area_cg.JPG" alt="AREA Project Center of Gravity" class="carousel-slide">
-              <img src="../assets/img/projects/area_freq.JPG" alt="AREA Project Frequency Analysis" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4.png" alt="MagDrop4 Project" class="carousel-slide active">
+              <img src="../assets/img/projects/magdrop4_InGame_Image1.jpg" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_demo.gif" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_BackofMagDrop4_Image.jpg" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_Magazine_Render_2.png" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_GantryCart_Render.png" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4_FSM_final.png" alt="MagDrop4 Project" class="carousel-slide">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -105,37 +104,45 @@
 
         <div class="description">
           <h2>Overview</h2>
-          <p>A landing gear system for integrating a battery-hydrogen hybrid system into an 
-            intermeshing-rotor helicopter UAV for high-altitude missions. The design involved 
-            comprehensive requirements analysis, CAD modeling in CATIA V5, and FEM-based optimization 
-            to ensure a compact, lightweight structure free of resonance issues.</p>
+          <p>MagDrop4 is an autonomous Connect4-playing machine that competes on a physical board. 
+            It uses IR sensors to detect human moves, features smart game piece storage, and executes 
+            moves via an electromagnet on a linear rail. Its AI, powered by Minimax with alpha-beta pruning, 
+            selects optimal moves.</p>
 
-          <h2>Key Highlights</h2  >
+          <h2>Key Highlights</h2>
           <ul>
-            <li>Comprehensive analysis of eVTOL technologies and landing gear requirements</li>
-            <li>Conceptual design and detailed CAD modeling using CATIA V5</li>
-            <li>Frequency Simulation and stress analysis with the Finite Element Method (FEM)</li>
-            <li>Emphasis on lightweight construction, performance optimization, and economic production</li>
+            <li><strong>Real-Time Interaction:</strong> Uses 7 IR sensors—one per column—to detect human moves.</li>
+            <li><strong>Advanced Game AI:</strong> Implements a Minimax algorithm with Alpha-Beta pruning to deliver challenging gameplay.</li>
+            <li><strong>Precision Mechanical Design:</strong> Features a custom-built linear actuator with a stepper motor, a belt system, and a electromagnet as an gripper for accurate piece placement.</li>
+            <li><strong>Integrated Electrical System:</strong> Controlled and implemented on a closed embedded system using a Raspberry Pi, coordinating sensor inputs, motor control, and overall machine logic.</li>
           </ul>
           <p>
-            The resulting design meets all critical technical demands and lays the groundwork for future hydrogen-powered UAVs.
+            MagDrop4 is a comprehensive project that combines mechanical, electrical, and software engineering to create a fun, responsive, and nearly unbeatable Connect4 playing machine.
           </p>
         </div>
 
         <div class="button-container">
           <div class="github-link">
-            <a href="../assets/documents/Bachelorarbeit_final (1).pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/leongreiner/MagDrop4" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+              View Project on GitHub
+            </a>
+          </div>
+          
+          <div class="github-link">
+            <a href="../assets/documents/Final_Report_MagDrop4.pdf" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-file-pdf"></i>
-              View Bachelor Thesis
+              View Project Report
             </a>
           </div>
         </div>
 
         <div class="tags">
-          <span>FEM</span>
+          <span>Embedded System</span>
+          <span>Control</span>
+          <span>Game AI</span>
           <span>Mechanical Design</span>
-          <span>Simulation</span>
-          <span>TUM</span>
+          <span>UC Berkeley</span>
         </div>
       </div>
     </section>
