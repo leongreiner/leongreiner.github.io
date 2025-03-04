@@ -505,6 +505,7 @@ body {
     gap: 2rem;
   }
   .intro--banner .content-wrapper h1 {
+    margin-top: 4rem;
     font-size: 3.5rem;
   }
 }
@@ -517,6 +518,7 @@ body {
     gap: 2rem;
   }
   .intro--banner .content-wrapper h1 {
+    margin-top: -3rem;
     font-size: 3rem;
   }
   .intro--banner .content-wrapper .subtitle {

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WALT - Leon Greiner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="WALT Project - Wheeled Autonomous Legged Transport">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Desktop header (visible on screens > 768px) -->
+  <header class="header desktop-header">
+    <nav class="header--nav">
+      <ul>
+        <li><a href="../index.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="../projects.html" class="active">
+              Projects <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-content">
+                <!-- Set the active class for the current project page -->
+                <a href="instr.html" class="PROJECT_INSTR_ACTIVE">INSTR</a>
+                <a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a>
+                <a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a>
+                <a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a>
+                <a href="dispenser.html" class="PROJECT_DISPENSER_ACTIVE">Dispenser Robot</a>
+            </div>
+          </li>        
+        <li><a href="../journey.html">Career Journey</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile header with hamburger (visible on screens <= 768px) -->
+  <header class="mobile-header">
+    <div class="mobile-header-wrapper">
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile menu dropdown -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-container">
+        <button class="mobile-close">&times;</button>
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../journey.html">Career Journey</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+          <!-- Add project submenu specific to mobile -->
+          <div class="mobile-submenu">
+            <h3>Projects</h3>
+            <ul>
+              <li><a href="instr.html" class="PROJECT_INSTR_ACTIVE">INSTR</a></li>
+              <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
+              <li><a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a></li>
+              <li><a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a></li>
+              <li><a href="dispenser.html" class="PROJECT_DISPENSER_ACTIVE">Dispenser Robot</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="project-page">
+      <div class="project-page--header">
+        <h1>AREA</h1>
+        <div class="subtitle">Bachelor Thesis: Landing gear design for integration of fuel cells into a UAV</div>
+        <div class="year">2023</div>
+      </div>
+
+      <div class="project-page--content">
+        <div class="main-image">
+          <button class="carousel-button prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <img src="../assets/img/projects/area.png" alt="AREA Project" class="carousel-slide active">
+              <img src="../assets/img/projects/area_alt_Gesamtmodell_3.jpg" alt="AREA Project Complete Model" class="carousel-slide">
+              <img src="../assets/img/projects/area_Landewerk_4.png" alt="AREA Project Landing Gear" class="carousel-slide">
+              <img src="../assets/img/projects/area_Landegestell_Mises.jpg" alt="AREA Project FEM Analysis" class="carousel-slide">
+              <img src="../assets/img/projects/area_Montageplatte_Mises.JPG" alt="AREA Project Mounting Plate" class="carousel-slide">
+              <img src="../assets/img/projects/area_cg.JPG" alt="AREA Project Center of Gravity" class="carousel-slide">
+              <img src="../assets/img/projects/area_freq.JPG" alt="AREA Project Frequency Analysis" class="carousel-slide">
+            </div>
+          </div>
+          <button class="carousel-button next" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="carousel-indicators">
+            <!-- Indicators will be added by JavaScript -->
+          </div>
+        </div>
+
+        <div class="description">
+          <h2>Overview</h2>
+          <p>A landing gear system for integrating a battery-hydrogen hybrid system into an 
+            intermeshing-rotor helicopter UAV for high-altitude missions. The design involved 
+            comprehensive requirements analysis, CAD modeling in CATIA V5, and FEM-based optimization 
+            to ensure a compact, lightweight structure free of resonance issues.</p>
+
+          <h2>Key Highlights</h2  >
+          <ul>
+            <li>Comprehensive analysis of eVTOL technologies and landing gear requirements</li>
+            <li>Conceptual design and detailed CAD modeling using CATIA V5</li>
+            <li>Frequency Simulation and stress analysis with the Finite Element Method (FEM)</li>
+            <li>Emphasis on lightweight construction, performance optimization, and economic production</li>
+          </ul>
+          <p>
+            The resulting design meets all critical technical demands and lays the groundwork for future hydrogen-powered UAVs.
+          </p>
+        </div>
+
+        <div class="button-container">
+          <div class="github-link">
+            <a href="../assets/documents/Bachelorarbeit_final (1).pdf" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-file-pdf"></i>
+              View Bachelor Thesis
+            </a>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span>FEM</span>
+          <span>Mechanical Design</span>
+          <span>Simulation</span>
+          <span>TUM</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Add script to set the active class based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get current page filename
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      // Remove all PROJECT_*_ACTIVE placeholders and set the active class
+      document.querySelectorAll('[class*="PROJECT_"]').forEach(function(link) {
+        link.classList.remove(link.className.match(/PROJECT_\w+_ACTIVE/)[0]);
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Hamburger menu functionality
+      const hamburgerBtn = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const closeBtn = document.querySelector('.mobile-close');
+      const body = document.body;
+      
+      if (hamburgerBtn && mobileMenu && closeBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+          hamburgerBtn.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          body.classList.toggle('menu-open');
+        });
+        
+        closeBtn.addEventListener('click', function() {
+          hamburgerBtn.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+        
+        document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
