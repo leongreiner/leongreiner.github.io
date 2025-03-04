@@ -866,198 +866,214 @@ body {
   line-height: 1.6;
 }
 
-.journey {
-  padding: 3rem 2rem 4rem;
-  max-width: 90vw;
-  margin: 0 auto;
+@media (min-width: 1000px) {
+  .journey {
+    padding: 3rem 2rem 4rem;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  .journey .timeline-container {
+    display: grid;
+    grid-template-columns: 0.5fr 100px 0.5fr;
+    gap: 0rem;
+    position: relative;
+    height: calc(9500px - 400vw);
+    margin-top: 80px;
+  }
+  .journey .timeline-center {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .journey .timeline-center .line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(70, 130, 180, 0.8);
+    opacity: 0.5;
+  }
+  .journey .timeline-center .years {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .journey .timeline-center .years .year {
+    color: rgba(16, 223, 161, 0.8);
+    font-weight: bold;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .journey .timeline-center .years .year::before, .journey .timeline-center .years .year::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background: rgba(16, 223, 161, 0.8);
+  }
+  .journey .timeline-center .years .year::before {
+    right: 100%;
+    margin-right: 0.5rem;
+  }
+  .journey .timeline-center .years .year::after {
+    left: 100%;
+    margin-left: 0.5rem;
+  }
+  .journey .timeline-column {
+    position: relative;
+    padding-top: 60px;
+    min-height: 600px;
+    overflow: visible;
+  }
+  .journey .timeline-column h2 {
+    color: rgba(16, 223, 161, 0.8);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+  }
+  .journey .timeline-column .entry {
+    position: absolute;
+    width: calc(100% - 4rem);
+    background: rgba(70, 130, 180, 0.4);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    min-height: 50px;
+  }
+  .journey .timeline-column .entry .content .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .journey .timeline-column .entry .content .title-row h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: bold;
+  }
+  .journey .timeline-column .entry .content .title-row .entry-date {
+    font-size: 0.9rem;
+    color: #bbb;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+  .journey .timeline-column .entry .content h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .journey .timeline-column .entry .content h3 .date {
+    font-size: 0.9rem;
+    color: #bbb;
+    font-weight: normal;
+  }
+  .journey .timeline-column .entry .content .place {
+    color: rgba(16, 223, 161, 0.8);
+    margin: 0.2rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .journey .timeline-column .entry .content .description {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    margin-bottom: 0.8rem;
+  }
+  .journey .timeline-column .entry .content .skills {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  .journey .timeline-column .entry .content .skills span {
+    background: transparent;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid rgba(16, 223, 161, 0.8);
+  }
+  .journey .timeline-column .entry .date {
+    display: none;
+  }
+  .journey .experience .entry {
+    right: 2rem;
+    text-align: right;
+  }
+  .journey .experience .entry .title-row {
+    flex-direction: row-reverse;
+  }
+  .journey .experience .entry .skills {
+    justify-content: flex-end;
+  }
+  .journey .education .entry {
+    left: 2rem;
+    text-align: left;
+  }
+  .journey .education .entry .skills {
+    justify-content: flex-start;
+  }
+  .journey .resume-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(16, 223, 161, 0.2);
+  }
+  .journey .resume-button a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: rgba(70, 130, 180, 0.1);
+    border: 1px solid rgba(70, 130, 180, 0.3);
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  .journey .resume-button a:hover {
+    background: rgba(70, 130, 180, 0.2);
+    transform: translateY(-2px);
+  }
+  .journey .resume-button a i {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+  }
 }
-.journey .timeline-container {
-  display: grid;
-  grid-template-columns: 1fr 120px 1fr;
-  gap: 0rem;
-  position: relative;
-  height: calc(5500px - 120vw);
-  margin-top: 80px;
+@media (max-width: 1279px) {
+  .journey .timeline-column .entry .content .title-row {
+    display: block;
+  }
+  .journey .timeline-column .entry .content .title-row h3 {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .journey .timeline-column .entry .content .title-row .entry-date {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.3rem;
+    text-align: inherit;
+  }
 }
-.journey .timeline-center {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-.journey .timeline-center .line {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: rgba(70, 130, 180, 0.8);
-  opacity: 0.5;
-}
-.journey .timeline-center .years {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-.journey .timeline-center .years .year {
-  color: rgba(16, 223, 161, 0.8);
-  font-weight: bold;
-  padding: 0.5rem 0;
-  position: relative;
-}
-.journey .timeline-center .years .year::before, .journey .timeline-center .years .year::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 10px;
-  height: 2px;
-  background: rgba(16, 223, 161, 0.8);
-}
-.journey .timeline-center .years .year::before {
-  right: 100%;
-  margin-right: 0.5rem;
-}
-.journey .timeline-center .years .year::after {
-  left: 100%;
-  margin-left: 0.5rem;
-}
-.journey .timeline-column {
-  position: relative;
-  padding-top: 60px;
-  min-height: 600px;
-  overflow: visible;
-}
-.journey .timeline-column h2 {
-  color: rgba(16, 223, 161, 0.8);
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  position: absolute;
-  top: -100px;
-  width: 100%;
-}
-.journey .timeline-column .entry {
-  position: absolute;
-  width: calc(100% - 1rem);
-  background: rgba(70, 130, 180, 0.4);
-  border-radius: 8px;
-  padding: 0.8rem 1.2rem;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-  min-height: 50px;
-}
-.journey .timeline-column .entry .content .title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-.journey .timeline-column .entry .content .title-row h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  line-height: 1.2;
-  color: #fff;
-  font-weight: bold;
-}
-.journey .timeline-column .entry .content .title-row .entry-date {
-  font-size: 0.9rem;
-  color: #bbb;
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-.journey .timeline-column .entry .content h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  line-height: 1.2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.journey .timeline-column .entry .content h3 .date {
-  font-size: 0.9rem;
-  color: #bbb;
-  font-weight: normal;
-}
-.journey .timeline-column .entry .content .place {
-  color: rgba(16, 223, 161, 0.8);
-  margin: 0.2rem 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.journey .timeline-column .entry .content .description {
-  color: #bbb;
-  font-size: 0.9rem;
-  margin: 0.2rem 0;
-  margin-bottom: 0.8rem;
-}
-.journey .timeline-column .entry .content .skills {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-.journey .timeline-column .entry .content .skills span {
-  background: transparent;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  background: transparent;
-  border: 1px solid rgba(16, 223, 161, 0.8);
-}
-.journey .timeline-column .entry .date {
-  display: none;
-}
-.journey .experience .entry {
-  right: 2rem;
-  text-align: right;
-}
-.journey .experience .entry .title-row {
-  flex-direction: row-reverse;
-}
-.journey .experience .entry .skills {
-  justify-content: flex-end;
-}
-.journey .education .entry {
-  left: 2rem;
-  text-align: left;
-}
-.journey .education .entry .skills {
-  justify-content: flex-start;
-}
-.journey .resume-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(16, 223, 161, 0.2);
-}
-.journey .resume-button a {
-  display: flex;
-  align-items: center;
-  padding: 0.8rem 1.5rem;
-  background: rgba(70, 130, 180, 0.1);
-  border: 1px solid rgba(70, 130, 180, 0.3);
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-.journey .resume-button a:hover {
-  background: rgba(70, 130, 180, 0.2);
-  transform: translateY(-2px);
-}
-.journey .resume-button a i {
-  margin-right: 0.8rem;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 999px) {
   .journey {
     padding: 2rem 1rem;
   }

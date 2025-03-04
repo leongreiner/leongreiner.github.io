@@ -3,7 +3,7 @@ $highlight: rgba(16, 223, 161, 0.8)
 $muted-gray: #bbb
 $white: #fff
 
-@media (min-width: 1000px)
+@media (max-width: 1000px)
   .journey
     padding: 3rem 2rem 4rem
     max-width: 90vw
@@ -11,10 +11,10 @@ $white: #fff
 
     .timeline-container
       display: grid
-      grid-template-columns: 0.5fr 100px 0.5fr
+      grid-template-columns: 1fr 120px 1fr
       gap: 0rem
       position: relative
-      height: calc(9500px - 400vw)  // Adjust this value based on your timeline range
+      height: calc(5500px - 120vw)  // Adjust this value based on your timeline range
       margin-top: 80px // Add space below headers
 
     .timeline-center
@@ -80,7 +80,7 @@ $white: #fff
 
       .entry
         position: absolute
-        width: calc(100% - 4rem)
+        width: calc(100% - 1rem)
         background: rgba(70, 130, 180, 0.4)
         border-radius: 8px
         padding: 0.8rem 1.2rem // Reduced padding
@@ -121,7 +121,6 @@ $white: #fff
               font-size: 0.9rem
               color: $muted-gray
               font-weight: normal
-            
 
           .place
             color: $highlight
@@ -201,26 +200,8 @@ $white: #fff
           margin-right: 0.8rem
           font-size: 1.2rem
 
-@media (max-width: 1279px)
-  .journey
-    .timeline-column
-      .entry
-        .content
-          .title-row
-            display: block  // Change from flex to block
-            
-            h3
-              display: block
-              margin-bottom: 0.3rem
-            
-            .entry-date
-              display: block  // Show the date (overriding the previous "none")
-              margin-left: 0  // Remove left margin
-              margin-top: 0.3rem  // Add top margin for spacing
-              text-align: inherit  // Inherit text alignment from parent
-
 // Responsive styles
-@media (max-width: 999px)
+@media (max-width: 1000px)
   .journey
     padding: 2rem 1rem
 

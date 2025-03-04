@@ -206,18 +206,10 @@ $white: #fff
     .timeline-column
       .entry
         .content
-          .title-row
-            display: block  // Change from flex to block
-            
-            h3
+          h3
+            .date
               display: block
-              margin-bottom: 0.3rem
-            
-            .entry-date
-              display: block  // Show the date (overriding the previous "none")
-              margin-left: 0  // Remove left margin
-              margin-top: 0.3rem  // Add top margin for spacing
-              text-align: inherit  // Inherit text alignment from parent
+              margin-top: 0.3rem // Add some spacing between title and date
 
 // Responsive styles
 @media (max-width: 999px)

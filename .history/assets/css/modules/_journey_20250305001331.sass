@@ -122,6 +122,9 @@ $white: #fff
               color: $muted-gray
               font-weight: normal
             
+          @media (max-width:  1278px)
+            
+            
 
           .place
             color: $highlight
@@ -200,24 +203,6 @@ $white: #fff
         i
           margin-right: 0.8rem
           font-size: 1.2rem
-
-@media (max-width: 1279px)
-  .journey
-    .timeline-column
-      .entry
-        .content
-          .title-row
-            display: block  // Change from flex to block
-            
-            h3
-              display: block
-              margin-bottom: 0.3rem
-            
-            .entry-date
-              display: block  // Show the date (overriding the previous "none")
-              margin-left: 0  // Remove left margin
-              margin-top: 0.3rem  // Add top margin for spacing
-              text-align: inherit  // Inherit text alignment from parent
 
 // Responsive styles
 @media (max-width: 999px)

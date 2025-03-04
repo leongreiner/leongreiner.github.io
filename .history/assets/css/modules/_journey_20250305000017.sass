@@ -3,18 +3,18 @@ $highlight: rgba(16, 223, 161, 0.8)
 $muted-gray: #bbb
 $white: #fff
 
-@media (min-width: 1000px)
+@media (min-width: 999px)
   .journey
-    padding: 3rem 2rem 4rem
+    padding: 3rem 0rem 4rem
     max-width: 90vw
     margin: 0 auto
 
     .timeline-container
       display: grid
-      grid-template-columns: 0.5fr 100px 0.5fr
-      gap: 0rem
+      grid-template-columns: 1fr 120px 1fr
+      gap: 1rem
       position: relative
-      height: calc(9500px - 400vw)  // Adjust this value based on your timeline range
+      height: 3000px  // Adjust this value based on your timeline range
       margin-top: 80px // Add space below headers
 
     .timeline-center
@@ -121,7 +121,6 @@ $white: #fff
               font-size: 0.9rem
               color: $muted-gray
               font-weight: normal
-            
 
           .place
             color: $highlight
@@ -200,24 +199,6 @@ $white: #fff
         i
           margin-right: 0.8rem
           font-size: 1.2rem
-
-@media (max-width: 1279px)
-  .journey
-    .timeline-column
-      .entry
-        .content
-          .title-row
-            display: block  // Change from flex to block
-            
-            h3
-              display: block
-              margin-bottom: 0.3rem
-            
-            .entry-date
-              display: block  // Show the date (overriding the previous "none")
-              margin-left: 0  // Remove left margin
-              margin-top: 0.3rem  // Add top margin for spacing
-              text-align: inherit  // Inherit text alignment from parent
 
 // Responsive styles
 @media (max-width: 999px)
