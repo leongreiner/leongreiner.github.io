@@ -1,0 +1,81 @@
+// ...existing styles...
+
+@media (max-width: 767px)
+  // Mobile phones
+  html, body
+    overflow-x: hidden
+    width: 100%
+    max-width: 100%
+    
+  .intro
+    padding: 0
+    max-width: 100%
+    width: 100%
+    box-sizing: border-box
+    overflow-x: hidden
+    
+  .intro--banner
+    gap: 1.5rem
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+      
+      img
+        max-width: 250px
+        margin: 0 auto
+    
+    .content-wrapper 
+      h1
+        font-size: 2.75rem
+        height: auto
+        min-height: 7rem
+      
+      // Add line between content and social buttons
+      position: relative
+      padding-bottom: 30px
+      margin-bottom: 30px
+      
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+    
+    .social-buttons
+      position: relative
+      bottom: auto
+      left: auto
+      width: 100%
+      justify-content: center
+      margin-top: 0 // Reset margin since we're using padding on content-wrapper

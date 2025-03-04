@@ -1,0 +1,116 @@
+// ...existing styles...
+
+@media (max-width: 767px)
+  // Mobile phones
+  html, body
+    overflow-x: hidden
+    width: 100%
+    max-width: 100%
+    
+  .intro
+    padding: 0
+    max-width: 100%
+    width: 100%
+    box-sizing: border-box
+    overflow-x: hidden
+    
+  .intro--banner
+    gap: 1.5rem
+    grid-template-columns: 1fr
+    width: 100%
+    max-width: 100%
+    padding: 0 1rem
+    box-sizing: border-box
+    overflow-x: hidden
+    
+    .image-wrapper
+      order: -1
+      position: relative
+      margin-bottom: 30px
+      padding-bottom: 2px
+      
+      // Line under image
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+      
+      img
+        max-width: 250px
+        margin: 0 auto
+        width: 100%
+    
+    .content-wrapper 
+      h1
+        font-size: 2.5rem
+        height: auto
+        min-height: 7rem
+        width: 100%
+        box-sizing: border-box
+        word-wrap: break-word
+        overflow-wrap: break-word
+      
+      .bio-text p
+        font-size: 1rem
+        max-width: 100%
+        word-wrap: break-word
+        overflow-wrap: break-word
+        box-sizing: border-box
+      
+      // Add line between content and social buttons
+      position: relative
+      padding-bottom: 30px
+      margin-bottom: 30px
+      width: 100%
+      box-sizing: border-box
+      
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+    
+    .social-buttons
+      position: relative
+      bottom: auto
+      left: auto
+      width: 100%
+      justify-content: center
+      margin-top: 0 // Reset margin since we're using padding on content-wrapper
+      flex-wrap: wrap
+      
+      a
+        min-width: 90px

@@ -1,6 +1,6 @@
 // ...existing styles...
 
-@media (max-width: 900px)
+@media (max-width: 767px)
   // Mobile phones
   html, body
     overflow-x: hidden
@@ -16,9 +16,6 @@
     margin: 60px auto 0
     
     &--banner
-      &::before,
-      &::after
-        display: none !important
       gap: 1.5rem
       grid-template-columns: 1fr
       width: 100%
@@ -124,24 +121,3 @@
         a
           min-width: 90px
           margin: 0.25rem
-
-// Extra small devices (small smartphones)
-@media (max-width: 480px)
-  .intro
-    &--banner
-      
-      // Adjust spacing since the decorative lines are now hidden
-      padding-bottom: 1rem
-      margin-bottom: 1rem
-      
-      .content-wrapper
-        // Still keep lines under content on mobile
-        &::before,
-        &::after
-          display: block !important
-          
-      .image-wrapper
-        // Still keep lines under image on mobile
-        &::before,
-        &::after
-          display: block !important

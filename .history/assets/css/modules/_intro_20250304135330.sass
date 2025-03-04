@@ -23,7 +23,7 @@
       left: 0
       right: 0
       height: 2px
-      background-color: #777
+      background-color: $muted-gray
       z-index: 1
       transform: translateY(0)  // Adjust line position
 
@@ -34,7 +34,7 @@
       left: 0
       width: 30px
       height: 4px
-      background-color: #10DFA1
+      background-color: $highlight
       z-index: 2
       transform: translateY(0)  // Adjust line position
 
@@ -201,17 +201,47 @@
         margin-top: 2rem
         justify-content: center
 
-@media (max-width: 900px)
+@media (max-width: 767px)
   .intro
+    overflow-x: hidden
+    width: 100%
+    max-width: 100%
+    padding: 0
 
     &--banner
-      height: 305px
+      height: auto
+      width: 100%
+      max-width: 100%
+      box-sizing: border-box
+      padding: 1rem
 
-      h1
-        font-size: 44px
+      .content-wrapper
+        width: 100%
+        max-width: 100%
+        box-sizing: border-box
 
-      img
-        width: 330px
+        h1
+          font-size: 2.5rem
+          height: auto
+          min-height: 5rem
+          overflow: visible
+          width: 100%
+          word-wrap: break-word
+          overflow-wrap: break-word
+
+        .bio-text p
+          width: 100%
+          box-sizing: border-box
+          overflow-wrap: break-word
+
+      .social-buttons
+        flex-wrap: wrap
+        width: 100%
+        justify-content: center
+
+        a
+          margin-bottom: 0.5rem
+          flex: 0 1 auto
 
     &--options
       display: block

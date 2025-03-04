@@ -8,6 +8,41 @@
   @media (max-width: 1180px)
     max-width: 100%
 
+  @media (max-width: 767px)
+    padding: 0 0.5rem
+    
+    &--banner
+      max-width: 100%
+      width: 100%
+      padding: 1rem
+      box-sizing: border-box
+      gap: 1rem
+      
+      .content-wrapper
+        width: 100%
+        max-width: 100%
+        
+        h1
+          font-size: 2.5rem
+          height: auto
+          min-height: 5rem
+          overflow: visible
+          width: 100%
+        
+        .bio-text
+          p
+            width: 100%
+            box-sizing: border-box
+            overflow-wrap: break-word
+      
+      .social-buttons
+        flex-wrap: wrap
+        width: 100%
+        justify-content: center
+        
+        a
+          margin-bottom: 0.5rem
+
   &--banner
     display: grid
     grid-template-columns: 1fr 400px
@@ -23,7 +58,7 @@
       left: 0
       right: 0
       height: 2px
-      background-color: #777
+      background-color: $muted-gray
       z-index: 1
       transform: translateY(0)  // Adjust line position
 
@@ -34,7 +69,7 @@
       left: 0
       width: 30px
       height: 4px
-      background-color: #10DFA1
+      background-color: $highlight
       z-index: 2
       transform: translateY(0)  // Adjust line position
 
@@ -201,7 +236,7 @@
         margin-top: 2rem
         justify-content: center
 
-@media (max-width: 900px)
+@media (max-width: 767px)
   .intro
 
     &--banner

@@ -1,0 +1,99 @@
+// ...existing styles...
+
+@media (max-width: 767px)
+  // Mobile phones
+  .intro
+    padding: 0  // Remove horizontal padding on small screens
+    
+  .intro--banner
+    gap: 1.5rem
+    grid-template-columns: 1fr
+    max-width: 100%
+    padding: 0 1rem  // Add consistent padding inside banner
+    box-sizing: border-box
+    overflow: hidden
+    
+    .image-wrapper
+      order: -1
+      position: relative
+      margin-bottom: 30px
+      padding-bottom: 2px
+      
+      // Line under image
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+      
+      img
+        max-width: 250px
+        margin: 0 auto
+        width: 100%  // Ensure image is responsive
+    
+    .content-wrapper 
+      h1
+        font-size: 2.5rem  // Slightly smaller font size
+        height: auto
+        min-height: 7rem
+      
+      .bio-text p
+        font-size: 1rem
+        max-width: 100%
+        word-wrap: break-word  // Prevent text from overflowing
+      
+      // Add line between content and social buttons
+      position: relative
+      padding-bottom: 30px
+      margin-bottom: 30px
+      width: 100%  // Ensure full width
+      
+      &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 30px
+        height: 4px
+        background-color: #10DFA1
+        z-index: 2
+        display: block !important
+      
+      &::before
+        content: ""
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 0
+        height: 2px
+        background-color: #777
+        z-index: 1
+        display: block !important
+    
+    .social-buttons
+      position: relative
+      bottom: auto
+      left: auto
+      width: 100%
+      justify-content: center
+      margin-top: 0 // Reset margin since we're using padding on content-wrapper
+      flex-wrap: wrap  // Allow buttons to wrap if needed
+      
+      a
+        min-width: 90px  // Slightly smaller buttons on very small screens

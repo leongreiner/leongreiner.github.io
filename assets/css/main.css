@@ -367,7 +367,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #282828;
+  background-color: #777;
   z-index: 1;
   transform: translateY(0);
 }
@@ -378,7 +378,7 @@ body {
   left: 0;
   width: 30px;
   height: 4px;
-  background-color: #0f33ff;
+  background-color: #10DFA1;
   z-index: 2;
   transform: translateY(0);
 }
@@ -541,7 +541,7 @@ body {
     justify-content: center;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .intro--banner {
     height: 305px;
   }
@@ -1943,16 +1943,42 @@ body {
     align-items: flex-start;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .intro {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 60px auto 0;
+  }
   .intro--banner {
     gap: 1.5rem;
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: auto;
+  }
+  .intro--banner::before, .intro--banner::after {
+    display: none !important;
   }
   .intro--banner .image-wrapper {
     order: -1;
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 2px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .intro--banner .image-wrapper::after {
     content: "";
@@ -1979,16 +2005,30 @@ body {
   .intro--banner .image-wrapper img {
     max-width: 250px;
     margin: 0 auto;
+    width: 100%;
   }
   .intro--banner .content-wrapper {
     position: relative;
     padding-bottom: 30px;
     margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .intro--banner .content-wrapper h1 {
     font-size: 2.75rem;
     height: auto;
     min-height: 7rem;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .intro--banner .content-wrapper .bio-text p {
+    font-size: 1rem;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
   }
   .intro--banner .content-wrapper::after {
     content: "";
@@ -2019,6 +2059,23 @@ body {
     width: 100%;
     justify-content: center;
     margin-top: 0;
+    flex-wrap: wrap;
+  }
+  .intro--banner .social-buttons a {
+    min-width: 90px;
+    margin: 0.25rem;
+  }
+}
+@media (max-width: 480px) {
+  .intro--banner {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  .intro--banner .content-wrapper::before, .intro--banner .content-wrapper::after {
+    display: block !important;
+  }
+  .intro--banner .image-wrapper::before, .intro--banner .image-wrapper::after {
+    display: block !important;
   }
 }
 .mobile-header {
@@ -2196,5 +2253,16 @@ body.menu-open {
   .contact h1, .contact .page-title, .contact .title, .contact-page h1, .contact-page .page-title, .contact-page .title, section.contact h1, section.contact .page-title, section.contact .title {
     margin-top: 20px;
     margin-bottom: 30px;
+  }
+  .main-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }/*# sourceMappingURL=main.css.map */
