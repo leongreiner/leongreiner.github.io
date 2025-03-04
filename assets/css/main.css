@@ -874,9 +874,9 @@ body {
 .journey .timeline-container {
   display: grid;
   grid-template-columns: 1fr 120px 1fr;
-  gap: 1rem;
+  gap: 0rem;
   position: relative;
-  height: 3000px;
+  height: calc(5500px - 120vw);
   margin-top: 80px;
 }
 .journey .timeline-center {
@@ -942,7 +942,7 @@ body {
 }
 .journey .timeline-column .entry {
   position: absolute;
-  width: calc(100% - 4rem);
+  width: calc(100% - 1rem);
   background: rgba(70, 130, 180, 0.4);
   border-radius: 8px;
   padding: 0.8rem 1.2rem;
