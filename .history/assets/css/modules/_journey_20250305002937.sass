@@ -222,7 +222,7 @@ $white: #fff
 // Responsive styles
 @media (max-width: 999px)
   .journey
-    padding: 2rem 2rem  // Increased side padding on both sides
+    padding: 2rem 1rem
 
     .timeline-container
       display: flex
@@ -243,16 +243,13 @@ $white: #fff
       h2
         position: relative
         top: 0
-        margin-bottom: 2rem
         text-align: left
         color: $highlight
         font-size: 1.8rem
 
       .entry
-        position: relative  // Force relative positioning
+        position: relative
         width: 100%
-        max-width: 100%  // Ensure entries don't overflow
-        box-sizing: border-box  // Include padding in width calculation
         left: auto
         right: auto
         text-align: left
@@ -300,28 +297,4 @@ $white: #fff
 
     // Ensure resume button maintains styling
     .resume-button
-      display: flex
-      justify-content: center
       margin-top: 2rem
-      padding-top: 2rem
-      border-top: 1px solid rgba($highlight, 0.2)
-
-      a
-        display: flex
-        align-items: center
-        padding: 0.8rem 1.5rem
-        background: rgba(70, 130, 180, 0.1)
-        border: 1px solid rgba(70, 130, 180, 0.3)
-        border-radius: 4px
-        color: $white
-        text-decoration: none
-        font-size: 1rem
-        transition: all 0.3s ease
-
-        &:hover
-          background: rgba(70, 130, 180, 0.2)
-          transform: translateY(-2px)
-
-        i
-          margin-right: 0.8rem
-          font-size: 1.2rem

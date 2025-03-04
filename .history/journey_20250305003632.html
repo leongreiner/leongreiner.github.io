@@ -260,26 +260,6 @@
       }
       
       // Desktop positioning logic below
-      // Define timeline range (January 2019 to January 2025)
-      const timelineStart = new Date("2019-01-01");
-      const timelineEnd   = new Date("2026-01-01");
-      
-      // Calculate total months in timeline range.
-      const totalMonths = (timelineEnd.getFullYear() - timelineStart.getFullYear()) * 12 +
-                          (timelineEnd.getMonth() - timelineStart.getMonth());
-      const pixelsPerMonth = containerHeight / totalMonths;
-      
-      // Helper function: convert YYYY-MM string to month offset.
-      function getMonthOffset(dateStr) {
-        const [year, month] = dateStr.split("-").map(Number);
-        return (year - timelineStart.getFullYear()) * 12 + (month - 1);
-      }
-      
-      document.querySelectorAll('.timeline-column .entry').forEach(entry => {
-        // Reset to absolute positioning for desktop
-        entry.style.position = 'absolute';
-        
-        const startStr = entry.dataset.start;
         const endStr = entry.dataset.end;
         if (!startStr || !endStr) return;
         

@@ -236,26 +236,6 @@
           entry.style.height = '';
           entry.style.position = 'relative';
         });
-        
-        // Reorder entries in each column - newest first for mobile
-        document.querySelectorAll('.timeline-column').forEach(column => {
-          const entries = Array.from(column.querySelectorAll('.entry'));
-          
-          // Sort entries by date, newest first
-          entries.sort((a, b) => {
-            const aEndDate = a.dataset.end;
-            const bEndDate = b.dataset.end;
-            
-            // Compare dates in reverse order (newest first)
-            return bEndDate.localeCompare(aEndDate);
-          });
-          
-          // Re-append entries in the new order
-          entries.forEach(entry => {
-            column.appendChild(entry);
-          });
-        });
-        
         return; // Exit early for mobile view
       }
       

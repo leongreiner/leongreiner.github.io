@@ -236,26 +236,6 @@
           entry.style.height = '';
           entry.style.position = 'relative';
         });
-        
-        // Reorder entries in each column - newest first for mobile
-        document.querySelectorAll('.timeline-column').forEach(column => {
-          const entries = Array.from(column.querySelectorAll('.entry'));
-          
-          // Sort entries by date, newest first
-          entries.sort((a, b) => {
-            const aEndDate = a.dataset.end;
-            const bEndDate = b.dataset.end;
-            
-            // Compare dates in reverse order (newest first)
-            return bEndDate.localeCompare(aEndDate);
-          });
-          
-          // Re-append entries in the new order
-          entries.forEach(entry => {
-            column.appendChild(entry);
-          });
-        });
-        
         return; // Exit early for mobile view
       }
       
@@ -281,24 +261,7 @@
         
         const startStr = entry.dataset.start;
         const endStr = entry.dataset.end;
-        if (!startStr || !endStr) return;
-        
-        const startOffset = getMonthOffset(startStr);
-        const endOffset = getMonthOffset(endStr);
-        
-        // The top of the entry aligns with its end date.
-        const topPos = containerHeight - (endOffset * pixelsPerMonth);
-        // The bottom aligns with its start date.
-        const bottomPos = containerHeight - (startOffset * pixelsPerMonth);
-        const entryHeight = bottomPos - topPos;
-        
-        entry.style.top = topPos + "px";
-        entry.style.height = (entryHeight > 50 ? entryHeight : 50) + "px";
-      });
-    }
-    
-    window.addEventListener('load', positionTimelineEntries);
-    window.addEventListener('resize', debounce(positionTimelineEntries, 250));
+    window.addEventListener('resize', positionTimelineEntries);
 
     // Hamburger menu functionality (same as index.html)
     document.addEventListener('DOMContentLoaded', function() {

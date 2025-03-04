@@ -222,7 +222,7 @@ $white: #fff
 // Responsive styles
 @media (max-width: 999px)
   .journey
-    padding: 2rem 2rem  // Increased side padding on both sides
+    padding: 2rem 1rem
 
     .timeline-container
       display: flex
@@ -238,7 +238,6 @@ $white: #fff
       min-height: auto
       overflow: visible
       position: relative
-      margin-bottom: 2rem  // Add spacing between columns
 
       h2
         position: relative
@@ -249,43 +248,13 @@ $white: #fff
         font-size: 1.8rem
 
       .entry
-        position: relative  // Force relative positioning
+        position: relative
         width: 100%
-        max-width: 100%  // Ensure entries don't overflow
-        box-sizing: border-box  // Include padding in width calculation
         left: auto
         right: auto
         text-align: left
         margin-bottom: 1.5rem
         height: auto !important  // Override the JS-set height
-        background: rgba(70, 130, 180, 0.4)  // Explicitly maintain the background
-        border-radius: 8px  // Maintain border radius
-        padding: 0.8rem 1.2rem  // Maintain padding
-        
-        .content
-          // Maintain all content styling
-          .place
-            color: $highlight
-            font-size: 1.1rem
-            font-weight: bold
-            margin: 0.2rem 0
-            
-          .description
-            color: $muted-gray
-            font-size: 0.9rem
-            margin: 0.2rem 0 0.8rem
-            
-          .skills
-            display: flex
-            gap: 0.4rem
-            flex-wrap: wrap
-            margin-top: 0.5rem
-            
-            span
-              border: 1px solid $highlight
-              padding: 0.2rem 0.6rem
-              border-radius: 4px
-              font-size: 0.8rem
 
     // Make sure experience entries align left in mobile view
     .experience .entry
@@ -297,31 +266,3 @@ $white: #fff
 
       .content .title-row
         flex-direction: row  // Reset to normal direction for mobile
-
-    // Ensure resume button maintains styling
-    .resume-button
-      display: flex
-      justify-content: center
-      margin-top: 2rem
-      padding-top: 2rem
-      border-top: 1px solid rgba($highlight, 0.2)
-
-      a
-        display: flex
-        align-items: center
-        padding: 0.8rem 1.5rem
-        background: rgba(70, 130, 180, 0.1)
-        border: 1px solid rgba(70, 130, 180, 0.3)
-        border-radius: 4px
-        color: $white
-        text-decoration: none
-        font-size: 1rem
-        transition: all 0.3s ease
-
-        &:hover
-          background: rgba(70, 130, 180, 0.2)
-          transform: translateY(-2px)
-
-        i
-          margin-right: 0.8rem
-          font-size: 1.2rem

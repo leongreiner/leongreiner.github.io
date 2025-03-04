@@ -222,7 +222,7 @@ $white: #fff
 // Responsive styles
 @media (max-width: 999px)
   .journey
-    padding: 2rem 2rem  // Increased side padding on both sides
+    padding: 2rem 1.5rem  // Increased side padding from 1rem to 1.5rem
 
     .timeline-container
       display: flex
@@ -251,8 +251,6 @@ $white: #fff
       .entry
         position: relative  // Force relative positioning
         width: 100%
-        max-width: 100%  // Ensure entries don't overflow
-        box-sizing: border-box  // Include padding in width calculation
         left: auto
         right: auto
         text-align: left

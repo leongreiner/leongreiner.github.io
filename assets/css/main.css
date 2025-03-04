@@ -1075,20 +1075,105 @@ body {
 }
 @media (max-width: 999px) {
   .journey {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
   }
   .journey .timeline-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: auto;
   }
   .journey .timeline-center {
     display: none;
   }
-  .journey .timeline-column .entry {
-    width: 100%;
-    left: 0;
-    right: 0;
+  .journey .timeline-column {
+    padding-top: 0;
+    min-height: auto;
+    overflow: visible;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .journey .timeline-column h2 {
+    position: relative;
+    top: 0;
+    margin-bottom: 2rem;
     text-align: left;
+    color: rgba(16, 223, 161, 0.8);
+    font-size: 1.8rem;
+  }
+  .journey .timeline-column .entry {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    left: auto;
+    right: auto;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    height: auto !important;
+    background: rgba(70, 130, 180, 0.4);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+  }
+  .journey .timeline-column .entry .content .place {
+    color: rgba(16, 223, 161, 0.8);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.2rem 0;
+  }
+  .journey .timeline-column .entry .content .description {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0.8rem;
+  }
+  .journey .timeline-column .entry .content .skills {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .journey .timeline-column .entry .content .skills span {
+    border: 1px solid rgba(16, 223, 161, 0.8);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  .journey .experience .entry {
+    text-align: left;
+    right: auto;
+  }
+  .journey .experience .entry .content .skills {
+    justify-content: flex-start;
+  }
+  .journey .experience .entry .content .title-row {
+    flex-direction: row;
+  }
+  .journey .resume-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(16, 223, 161, 0.2);
+  }
+  .journey .resume-button a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: rgba(70, 130, 180, 0.1);
+    border: 1px solid rgba(70, 130, 180, 0.3);
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  .journey .resume-button a:hover {
+    background: rgba(70, 130, 180, 0.2);
+    transform: translateY(-2px);
+  }
+  .journey .resume-button a i {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
   }
 }
 .contact {
