@@ -25,7 +25,7 @@
               Projects <span class="dropdown-arrow">▼</span>
             </a>
             <div class="dropdown-content">
-                <a href="projects/dlr.html">TRIS</a>
+                <a href="projects/dlr.html">ReTRI</a>
                 <a href="projects/magdrop4.html">MagDrop4</a>
                 <a href="projects/walt.html">WALT</a>
                 <a href="projects/area.html">AREA</a>
@@ -111,34 +111,15 @@
               </div>
             </div>
           </div>
-          <div class="entry" data-start="2024-06" data-end="2025-01">
-            <div class="content">
-              <div class="title-row">
-                <h3>Visiting Graduate Student</h3>
-                <span class="entry-date">Aug 2024 - Dec 2024</span>
-              </div>
-              <p class="place">UC Berkeley</p>
-              <p class="description">Coursework: Robotic Locomotion, Embedded Systems, Mathematical Programming.
-                Semester Project: Designed and built a fully autonomous wheeled quadruped, with responsibility for perception, path planning and locomotion.
-                Mid-Semester Project: Designed and developed an autonomous real-world Connect Four-playing machine capable of competing against a human in real time.</p>
-              <div class="skills">
-                <span>Python</span>
-                <span>Git</span>
-                <span>Robotics</span>
-                <span>OpenCV</span>
-                <span>Embedded Sytems</span>
-              </div>
-            </div>
-          </div>
           <div class="entry" data-start="2025-02" data-end="2025-09">
             <div class="content">
               <div class="title-row">
-                <h3>Robotics Research Intern - Perception & Cognition</h3>
-                <span class="entry-date">Feb 2025 - Jun 2025</span>
+                <h3>Robotics Research Intern | Perception & Cognition</h3>
+                <span class="entry-date">Feb 2025 - Jul 2025</span>
               </div>
               <p class="place">German Aerospace Center (DLR)</p>
-              <p class="description">Developing and implementing a transformer-based model for pixel-wise correspondence
-                in unknown object segmentation from stereo images.</p>
+              <p class="description">Developing a transformer-based segmentation model that constructs a 3D
+                feature representation of unseen objects using rendered CAD templates.</p>
               <div class="skills">
                 <span>Computer Vision</span>
                 <span>Transformer</span>
@@ -146,6 +127,19 @@
                 <span>PyTorch</span>
                 <span>OpenCV</span>
                 <span>Cuda</span>
+              </div>
+            </div>
+          </div>
+          <div class="entry" data-start="2025-02" data-end="2025-09">
+            <div class="content">
+              <div class="title-row">
+                <h3>Robotics Engineer | Humanoid Team</h3>
+                <span class="entry-date">May 2025 - Present</span>
+              </div>
+              <p class="place">RoboTUM</p>
+              <p class="description">Simulating locomotion and developing a perception pipeline for a bipedal robot aiming to become the fastest in the world.</p>
+              <div class="skills">
+                <span>Isaac Sim</span>
               </div>
             </div>
           </div>
@@ -189,6 +183,25 @@
               </div>
             </div>
           </div>
+          <div class="entry" data-start="2024-06" data-end="2025-01">
+            <div class="content">
+              <div class="title-row">
+                <h3>Visiting Graduate Student</h3>
+                <span class="entry-date">Aug 2024 - Dec 2024</span>
+              </div>
+              <p class="place">UC Berkeley</p>
+              <p class="description">Coursework: Robotic Locomotion, Embedded Systems, Mathematical Programming.
+                Semester Project: Designed and built a fully autonomous wheeled quadruped, with responsibility for perception, path planning and locomotion.
+                Mid-Semester Project: Designed and developed an autonomous real-world Connect Four-playing machine capable of competing against a human in real time.</p>
+              <div class="skills">
+                <span>Python</span>
+                <span>Git</span>
+                <span>Robotics</span>
+                <span>OpenCV</span>
+                <span>Embedded Systems</span>
+              </div>
+            </div>
+          </div>
           <div class="entry" data-start="2023-11" data-end="2025-10">
             <div class="content">
               <div class="title-row">
@@ -229,8 +242,8 @@
       const container = document.querySelector('.timeline-container');
       const containerHeight = container.offsetHeight;
       
-      // Only use absolute positioning for desktop (≥1000px)
-      const isMobileView = window.innerWidth < 1000;
+      // Force mobile view
+      let isMobileView = true;
       
       if (isMobileView) {
         // For mobile: reset all positioning to let entries flow naturally
