@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ForensicGaussian - Leon Greiner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="ForensicGaussian Project - Photorealistic 3D crime scene reconstruction with semantic classification">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="494x494" href="../assets/img/favicon.png">
+</head>
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RQ0SD58C0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0RQ0SD58C0'); </script>
+<body>
+  <!-- Desktop header (visible on screens > 768px) -->
+  <header class="header desktop-header">
+    <nav class="header--nav">
+      <ul>
+        <li><a href="../index.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="../projects.html" class="active">
+              Projects <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-content">
+                <!-- Set the active class for the current project page -->
+                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a>
+                <a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a>
+                <a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a>
+                <a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a>
+                <a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a>
+                <a href="dispenser.html" class="PROJECT_DISPENSER_ACTIVE">Dispenser Robot</a>
+            </div>
+          </li>        
+        <li><a href="../journey.html">Career Journey</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile header with hamburger (visible on screens <= 768px) -->
+  <header class="mobile-header">
+    <div class="mobile-header-wrapper">
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile menu dropdown -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-container">
+        <button class="mobile-close">&times;</button>
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../journey.html">Career Journey</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+          <!-- Add project submenu specific to mobile -->
+          <div class="mobile-submenu">
+            <h3>Projects</h3>
+            <ul>
+              <li><a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a></li>
+              <li><a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a></li>
+              <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
+              <li><a href="walt.html" class="PROJECT_WALT_ACTIVE">WALT</a></li>
+              <li><a href="area.html" class="PROJECT_AREA_ACTIVE">AREA</a></li>
+              <li><a href="dispenser.html" class="PROJECT_DISPENSER_ACTIVE">Dispenser Robot</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="project-page">
+      <div class="project-page--header">
+        <h1>ForensicGaussian</h1>
+        <div class="subtitle">Photorealistic, semantically annotated 3D crime scene reconstruction</div>
+        <div class="year">2025</div>
+      </div>
+
+      <div class="project-page--content">
+        <div class="main-image">
+          <button class="carousel-button prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="../assets/img/projects/forensicgaussian_visual_3DGS_illustration.png" alt="ForensicGaussian Project" class="carousel-slide active">
+                <img src="../assets/img/projects/forensicgaussian_Crime_pipeline (2).png" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/forensicgaussian_forensic_classifier (3).png" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/forensicgaussian_forensicvision_overview.png" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/forensicgaussian_3dgs_demo-ezgif.com-video-to-gif-converter.gif" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/forensicgaussian_3d_semantic_embedding_loss.png" alt="ForensicGaussian Project" class="carousel-slide">
+            </div>
+          </div>
+          <button class="carousel-button next" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="carousel-indicators">
+            <!-- Indicators will be added by JavaScript -->
+          </div>
+        </div>
+
+         <div class="description">
+          <h2>Overview</h2>
+          <p>ForensicGaussian is a semantic Gaussian splatting model that integrates a custom-trained ForensicClassifier to generate photorealistic, semantically annotated 3D reconstructions of crime scenes, enhancing forensic investigation and evidence preservation.</p>
+          <p>The pipeline begins by auto-generating object masks on all input images using SAM 2.1, from which we extract DINOv2 embeddings. These high-dimensional DINOv2 embeddings are projected into 3D by an embedding MLP for efficient semantic Gaussian splatting training. Once the Gaussians and their associated 3D embeddings are learned, each Gaussian is assigned a single class via a classification MLP. This entire classification head, including embedding and classification MLPs, is trained on a custom ForensicVision dataset containing 12 classes, including an unknown class for background and ambiguous objects.</p>
+          <p>By inferring and classifying every Gaussian in the scene, ForensicGaussian produces 3D semantic masks that identify forensically relevant objects such as knives, firearms, and blood patterns, offering investigators an immersive, data-rich view of the scene.</p>
+
+          <h2>Key Highlights</h2>
+          <ul>
+            <li>Auto-mask generation with SAM 2.1 for object mask proposals</li>
+            <li>Feature extraction using DINOv2 embeddings from each mask proposal</li>
+            <li>Embedding MLP downsampling to 3D for semantic Gaussian training</li>
+            <li>Classification MLP assigns each Gaussian to one of 12 forensic classes including an unknown class</li>
+            <li>Custom ForensicVision dataset created to train classification head (Embedding MLP + Classification MLP)</li>
+            <li>Detects and labels knives, guns, blood, and other forensic elements in 3D</li>
+          </ul>
+          <p>The result is a semantically annotated 3D crime scene model that aids forensic experts in evidence documentation and scene analysis.</p>
+        </div>
+
+        <div class="tags">
+            <span>Computer Vision</span>
+            <span>Semantic Rendering</span>
+            <span>Gaussian Splatting</span>
+            <span>TUM</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Add script to set the active class based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get current page filename
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      // Remove all PROJECT_*_ACTIVE placeholders and set the active class
+      document.querySelectorAll('[class*="PROJECT_"]').forEach(function(link) {
+        link.classList.remove(link.className.match(/PROJECT_\w+_ACTIVE/)[0]);
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Hamburger menu functionality
+      const hamburgerBtn = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const closeBtn = document.querySelector('.mobile-close');
+      const body = document.body;
+      
+      if (hamburgerBtn && mobileMenu && closeBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+          hamburgerBtn.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          body.classList.toggle('menu-open');
+        });
+        
+        closeBtn.addEventListener('click', function() {
+          hamburgerBtn.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+        
+        document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
