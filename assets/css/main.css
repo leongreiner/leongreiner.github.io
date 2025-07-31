@@ -1145,7 +1145,7 @@ body {
   transition: color 0.3s ease;
 }
 .contact--item a:hover {
-  color: rgba(50, 240, 183, 0.8);
+  color: rgba(49.7280334728, 240.2719665272, 183.2008368201, 0.8);
 }
 .contact--item p {
   color: #bbb;
@@ -1545,6 +1545,8 @@ body {
   margin: 1rem auto;
   padding: 2rem;
   color: #fff;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .project-page--header {
   text-align: center;
