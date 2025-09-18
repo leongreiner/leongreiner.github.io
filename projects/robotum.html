@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ForensicGaussian - Leon Greiner</title>
+  <title>RoboTUM - Leon Greiner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="ForensicGaussian Project - Photorealistic 3D crime scene reconstruction with semantic classification">
+  <meta name="description" content="RoboTUM Project - Autonomous robotic system for urban mobility">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="494x494" href="../assets/img/favicon.png">
@@ -17,7 +17,11 @@
     <nav class="header--nav">
       <ul>
         <li><a href="../index.html">About Me</a></li>
-        <div class="dropdown-content">
+        <li class="dropdown">
+            <a href="../projects.html" class="active">
+              Projects <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-content">
                 <!-- Set the active class for the current project page -->
                 <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a>
                 <a href="robotum.html" class="PROJECT_ROBOTUM_ACTIVE">RoboTUM</a>
@@ -76,8 +80,8 @@
   <main class="main-content">
     <section class="project-page">
       <div class="project-page--header">
-        <h1>Forensic&shy;Gaussian</h1>
-        <div class="subtitle">Photorealistic, semantically annotated 3D crime scene reconstruction</div>
+        <h1>RoboTUM</h1>
+        <div class="subtitle">Fast walking bipedal humanoid</div>
         <div class="year">2025</div>
       </div>
 
@@ -88,12 +92,8 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-                <img src="../assets/img/projects/forensicgaussian_visual_3DGS_illustration.png" alt="ForensicGaussian Project" class="carousel-slide active">
-                <img src="../assets/img/projects/forensicgaussian_Crime_pipeline (2).png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_forensic_classifier (3).png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_forensicvision_overview.png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_3dgs_demo-ezgif.com-video-to-gif-converter.gif" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_3d_semantic_embedding_loss.png" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/forrest_render_1.png" alt="RoboTUM Project" class="carousel-slide active">
+                <img src="../assets/img/projects/tron1_demo.gif" alt="RoboTUM Project" class="carousel-slide">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -106,27 +106,15 @@
 
          <div class="description">
           <h2>Overview</h2>
-          <p>ForensicGaussian is a semantic Gaussian splatting model that integrates a custom-trained ForensicClassifier to generate photorealistic, semantically annotated 3D reconstructions of crime scenes, enhancing forensic investigation and evidence preservation.</p>
-          <p>The pipeline begins by auto-generating object masks on all input images using SAM 2.1, from which we extract DINOv2 embeddings. These high-dimensional DINOv2 embeddings are projected into 3D by an embedding MLP for efficient semantic Gaussian splatting training. Once the Gaussians and their associated 3D embeddings are learned, each Gaussian is assigned a single class via a classification MLP. This entire classification head, including embedding and classification MLPs, is trained on a custom ForensicVision dataset containing 12 classes, including an unknown class for background and ambiguous objects.</p>
-          <p>By inferring and classifying every Gaussian in the scene, ForensicGaussian produces 3D semantic masks that identify forensically relevant objects such as knives, firearms, and blood patterns, offering investigators an immersive, data-rich view of the scene.</p>
+          <p>I work with RoboTUM on our flagship bipedal humanoid project, aiming to build the world’s fastest walking robot. My focus is on reinforcement learning policy development and large-scale training in IsaacLab. I have developed controllers and RL pipelines for our own designed humanoid using IsaacSim/IsaacLab with the RSL-RL stack, including the development of a CPG-based controller, terrain adaptation, and sim-to-real transfer methods.</p>
 
-          <h2>Key Highlights</h2>
-          <ul>
-            <li>Auto-mask generation with SAM 2.1 for object mask proposals</li>
-            <li>Feature extraction using DINOv2 embeddings from each mask proposal</li>
-            <li>Embedding MLP downsampling to 3D for semantic Gaussian training</li>
-            <li>Classification MLP assigns each Gaussian to one of 12 forensic classes including an unknown class</li>
-            <li>Custom ForensicVision dataset created to train classification head (Embedding MLP + Classification MLP)</li>
-            <li>Detects and labels knives, guns, blood, and other forensic elements in 3D</li>
-          </ul>
-          <p>The result is a semantically annotated 3D crime scene model that aids forensic experts in evidence documentation and scene analysis.</p>
-        </div>
+          <h2>Currently in progress...</h2>
 
         <div class="tags">
-            <span>Computer Vision</span>
-            <span>Semantic Rendering</span>
-            <span>Gaussian Splatting</span>
-            <span>TUM</span>
+            <span>Reinforcement Learning</span>
+            <span>IsaacLab</span>
+            <span>Locomotion</span>
+            <span>RoboTUM</span>
         </div>
       </div>
     </section>
