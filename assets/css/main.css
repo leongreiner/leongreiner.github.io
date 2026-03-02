@@ -1008,6 +1008,34 @@ body {
   border-radius: 4px;
   font-size: 0.8rem;
 }
+.journey .timeline-column .entry.entry-group .content > .place {
+  margin-bottom: 0.1rem;
+}
+.journey .timeline-column .entry.entry-group .content .entry-date-overall {
+  display: block;
+  color: #bbb;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+.journey .timeline-column .entry.entry-group .content .sub-entry {
+  border-left: 2px solid rgba(16, 223, 161, 0.4);
+  padding-left: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.journey .timeline-column .entry.entry-group .content .sub-entry:last-of-type {
+  margin-bottom: 0.4rem;
+}
+.journey .timeline-column .entry.entry-group .content .sub-entry .title-row h3 {
+  font-size: 1rem;
+}
+.journey .timeline-column .entry.entry-group .content .sub-entry .entry-date {
+  font-size: 0.8rem;
+}
+.journey .timeline-column .entry.entry-group .content .sub-entry .description {
+  color: #bbb;
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0.4rem;
+}
 .journey .experience .entry {
   text-align: left;
   right: auto;
@@ -1224,13 +1252,13 @@ body {
   .contact--social a {
     width: 200px;
   }
-  .contact--content {
-    padding-top: 30px;
-  }
   .contact--content h1 {
     font-size: 2rem;
     margin-top: 20px;
     margin-bottom: 30px;
+  }
+  .contact--content {
+    padding-top: 30px;
   }
 }
 .section {
@@ -1816,6 +1844,9 @@ body {
     overflow-x: hidden;
     margin: 60px auto 0;
   }
+  .intro--banner::before, .intro--banner::after {
+    display: none !important;
+  }
   .intro--banner {
     gap: 1.5rem;
     grid-template-columns: 1fr;
@@ -1825,9 +1856,6 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     height: auto;
-  }
-  .intro--banner::before, .intro--banner::after {
-    display: none !important;
   }
   .intro--banner .image-wrapper {
     order: -1;

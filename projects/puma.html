@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ForensicGaussian - Leon Greiner</title>
+  <title>PUMA - Leon Greiner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="ForensicGaussian Project - Photorealistic 3D crime scene reconstruction with semantic classification">
+  <meta name="description" content="PUMA Project - ROS2 stack on DeepRobotics M20 wheeled quadruped">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="494x494" href="../assets/img/favicon.png">
@@ -64,8 +64,8 @@
           <div class="mobile-submenu">
             <h3>Projects</h3>
             <ul>
-              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a>
-                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a></li>
+              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a></li>
+              <li><a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a></li>
               <li><a href="forrest.html" class="PROJECT_FORREST_ACTIVE">Forrest</a></li>
               <li><a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a></li>
               <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
@@ -82,9 +82,9 @@
   <main class="main-content">
     <section class="project-page">
       <div class="project-page--header">
-        <h1>Forensic&shy;Gaussian</h1>
-        <div class="subtitle">Photorealistic, semantically annotated 3D crime scene reconstruction</div>
-        <div class="year">2025</div>
+        <h1>PUMA</h1>
+        <div class="subtitle">ROS2 stack on DeepRobotics M20 wheeled quadruped</div>
+        <div class="year">2026</div>
       </div>
 
       <div class="project-page--content">
@@ -94,12 +94,9 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-                <img src="../assets/img/projects/forensicgaussian_visual_3DGS_illustration.png" alt="ForensicGaussian Project" class="carousel-slide active">
-                <img src="../assets/img/projects/forensicgaussian_Crime_pipeline (2).png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_forensic_classifier (3).png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_forensicvision_overview.png" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_3dgs_demo-ezgif.com-video-to-gif-converter.gif" alt="ForensicGaussian Project" class="carousel-slide">
-                <img src="../assets/img/projects/forensicgaussian_3d_semantic_embedding_loss.png" alt="ForensicGaussian Project" class="carousel-slide">
+                <img src="../assets/img/projects/puma.png" alt="PUMA Project" class="carousel-slide active">
+                <img src="../assets/img/projects/puma_1.jpg" alt="PUMA Project" class="carousel-slide">
+                <img src="../assets/img/projects/puma_2.jpg" alt="PUMA Project" class="carousel-slide">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -112,27 +109,23 @@
 
          <div class="description">
           <h2>Overview</h2>
-          <p>ForensicGaussian is a semantic Gaussian splatting model that integrates a custom-trained ForensicClassifier to generate photorealistic, semantically annotated 3D reconstructions of crime scenes, enhancing forensic investigation and evidence preservation.</p>
-          <p>The pipeline begins by auto-generating object masks on all input images using SAM 2.1, from which we extract DINOv2 embeddings. These high-dimensional DINOv2 embeddings are projected into 3D by an embedding MLP for efficient semantic Gaussian splatting training. Once the Gaussians and their associated 3D embeddings are learned, each Gaussian is assigned a single class via a classification MLP. This entire classification head, including embedding and classification MLPs, is trained on a custom ForensicVision dataset containing 12 classes, including an unknown class for background and ambiguous objects.</p>
-          <p>By inferring and classifying every Gaussian in the scene, ForensicGaussian produces 3D semantic masks that identify forensically relevant objects such as knives, firearms, and blood patterns, offering investigators an immersive, data-rich view of the scene.</p>
+          <p>PUMA is a collaboration between Maxwell Robotics GmbH and Reply Roboverse, in which we implemented a full ROS2 stack on the DeepRobotics M20 wheeled quadruped. We built our own ROS2 stack from scratch running on a mounted Jetson, and also integrated a PTZ camera with IR on top of the robot. The ROS2 stack enables the robot to be controlled through Reply's fleet management software, allowing seamless integration into their robotic ecosystem.</p>
 
-          <h2>Key Highlights</h2>
+          <h2>Key Contributions</h2>
           <ul>
-            <li>Auto-mask generation with SAM 2.1 for object mask proposals</li>
-            <li>Feature extraction using DINOv2 embeddings from each mask proposal</li>
-            <li>Embedding MLP downsampling to 3D for semantic Gaussian training</li>
-            <li>Classification MLP assigns each Gaussian to one of 12 forensic classes including an unknown class</li>
-            <li>Custom ForensicVision dataset created to train classification head (Embedding MLP + Classification MLP)</li>
-            <li>Detects and labels knives, guns, blood, and other forensic elements in 3D</li>
+            <li>Developed a custom ROS2 stack from scratch on a mounted NVIDIA Jetson</li>
+            <li>Integrated PTZ camera with IR capabilities for enhanced perception</li>
+            <li>Enabled fleet management integration with Reply's software platform</li>
+            <li>Full system deployment on the DeepRobotics M20 wheeled quadruped</li>
           </ul>
-          <p>The result is a semantically annotated 3D crime scene model that aids forensic experts in evidence documentation and scene analysis.</p>
-        </div>
 
         <div class="tags">
-            <span>Computer Vision</span>
-            <span>Semantic Rendering</span>
-            <span>Gaussian Splatting</span>
-            <span>TUM</span>
+            <span>ROS2</span>
+            <span>Jetson</span>
+            <span>Quadruped</span>
+            <span>Fleet Management</span>
+            <span>Maxwell Robotics</span>
+            <span>Reply</span>
         </div>
       </div>
     </section>

@@ -69,6 +69,37 @@ $white: #fff
             border-radius: 4px
             font-size: 0.8rem
 
+    // Grouped entry (multiple roles at one company)
+    .entry.entry-group
+      .content
+        > .place
+          margin-bottom: 0.1rem
+
+        .entry-date-overall
+          display: block
+          color: $muted-gray
+          font-size: 0.85rem
+          margin-bottom: 0.8rem
+
+        .sub-entry
+          border-left: 2px solid rgba($highlight, 0.4)
+          padding-left: 0.8rem
+          margin-bottom: 0.8rem
+
+          &:last-of-type
+            margin-bottom: 0.4rem
+
+          .title-row h3
+            font-size: 1rem
+
+          .entry-date
+            font-size: 0.8rem
+
+          .description
+            color: $muted-gray
+            font-size: 0.85rem
+            margin: 0.2rem 0 0.4rem
+
   // Make sure experience entries align left in mobile view
   .experience .entry
     text-align: left
