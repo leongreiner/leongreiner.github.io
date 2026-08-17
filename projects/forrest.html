@@ -5,7 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Forrest Project - Autonomous robotic system for urban mobility">
+  <meta name="description" content="Forrest Project - RL-based locomotion for RoboTUM's flagship bipedal humanoid, aiming to be the world's fastest walking robot.">
+  <link rel="canonical" href="https://leongreiner.github.io/projects/forrest.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Forrest - Leon Greiner">
+  <meta property="og:description" content="Forrest Project - RL-based locomotion for RoboTUM's flagship bipedal humanoid, aiming to be the world's fastest walking robot.">
+  <meta property="og:url" content="https://leongreiner.github.io/projects/forrest.html">
+  <meta property="og:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forrest - Leon Greiner">
+  <meta name="twitter:description" content="Forrest Project - RL-based locomotion for RoboTUM's flagship bipedal humanoid, aiming to be the world's fastest walking robot.">
+  <meta name="twitter:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="494x494" href="../assets/img/favicon.png">
@@ -24,7 +34,7 @@
             <div class="dropdown-content">
                 <!-- Set the active class for the current project page -->
                 <a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a>
-                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a>
+                <a href="fomo.html" class="PROJECT_FOMO_ACTIVE">FOMO</a>
                 <a href="forrest.html" class="PROJECT_FORREST_ACTIVE">Forrest</a>
                 <a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a>
                 <a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a>
@@ -64,8 +74,8 @@
           <div class="mobile-submenu">
             <h3>Projects</h3>
             <ul>
-              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a>
-                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a></li>
+              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a></li>
+              <li><a href="fomo.html" class="PROJECT_FOMO_ACTIVE">FOMO</a></li>
               <li><a href="forrest.html" class="PROJECT_FORREST_ACTIVE">Forrest</a></li>
               <li><a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a></li>
               <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
@@ -94,8 +104,8 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-                <img src="../assets/img/projects/forrest_render_1.png" alt="Forrest Project" class="carousel-slide active">
-                <img src="../assets/img/projects/tron1_demo.gif" alt="Forrest Project" class="carousel-slide">
+                <img src="../assets/img/projects/forrest_render_1.png" alt="Rendered simulation of Forrest, RoboTUM's bipedal humanoid, running at speed on an open road" width="954" height="537" class="carousel-slide active">
+                <img src="../assets/img/projects/tron1_demo.webp" alt="Indoor test of the locomotion controller on a compact bipedal robot testbed platform (not the full-scale Forrest hardware)" width="640" height="1138" loading="lazy" class="carousel-slide">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">
@@ -108,7 +118,16 @@
 
          <div class="description">
           <h2>Overview</h2>
-          <p>I work with RoboTUM on our flagship bipedal humanoid project, aiming to build the world’s fastest walking robot, called Forrest. My focus was on reinforcement learning policy development and large-scale training in IsaacLab. I have developed controllers and RL pipelines for our own designed humanoid using IsaacSim/IsaacLab with the RSL-RL stack, including the development of a CPG-based controller, terrain adaptation, and sim-to-real transfer methods.</p>
+          <p>I work with RoboTUM on our flagship bipedal humanoid project, aiming to build the world’s fastest walking robot, called Forrest. My focus is on reinforcement learning policy development and large-scale training in IsaacLab, developing controllers and RL pipelines for our own designed humanoid using the IsaacSim/IsaacLab and RSL-RL stack.</p>
+
+          <h2>Key Highlights</h2>
+          <ul>
+            <li>Contributing to RoboTUM's goal of building the world's fastest walking bipedal humanoid robot</li>
+            <li>Developed reinforcement learning locomotion policies with large-scale training in IsaacSim/IsaacLab using the RSL-RL stack</li>
+            <li>Designed a CPG-based (central pattern generator) controller for locomotion</li>
+            <li>Implemented terrain adaptation for robust walking across varied surfaces</li>
+            <li>Developed sim-to-real transfer methods to deploy trained RL policies on the physical robot</li>
+          </ul>
 
         <div class="tags">
             <span>Reinforcement Learning</span>

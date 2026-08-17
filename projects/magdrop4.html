@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>WALT - Leon Greiner</title>
+  <title>MagDrop4 - Leon Greiner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="WALT Project - Wheeled Autonomous Legged Transport">
+  <meta name="description" content="MagDrop4 – an autonomous Connect Four-playing robot with IR sensing, an electromagnet gripper, and a minimax AI opponent.">
+  <link rel="canonical" href="https://leongreiner.github.io/projects/magdrop4.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MagDrop4 - Leon Greiner">
+  <meta property="og:description" content="MagDrop4 – an autonomous Connect Four-playing robot with IR sensing, an electromagnet gripper, and a minimax AI opponent.">
+  <meta property="og:url" content="https://leongreiner.github.io/projects/magdrop4.html">
+  <meta property="og:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MagDrop4 - Leon Greiner">
+  <meta name="twitter:description" content="MagDrop4 – an autonomous Connect Four-playing robot with IR sensing, an electromagnet gripper, and a minimax AI opponent.">
+  <meta name="twitter:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="494x494" href="../assets/img/favicon.png">
-  <a href="https://www.vecteezy.com/free-vector/robot-arm-icon">Robot Arm Icon Vectors by Vecteezy</a>
 </head>
 <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RQ0SD58C0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0RQ0SD58C0'); </script>
 <body>
@@ -25,7 +34,7 @@
             <div class="dropdown-content">
                 <!-- Set the active class for the current project page -->
                 <a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a>
-                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a>
+                <a href="fomo.html" class="PROJECT_FOMO_ACTIVE">FOMO</a>
                 <a href="forrest.html" class="PROJECT_FORREST_ACTIVE">Forrest</a>
                 <a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a>
                 <a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a>
@@ -65,8 +74,8 @@
           <div class="mobile-submenu">
             <h3>Projects</h3>
             <ul>
-              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a>
-                <a href="dlr.html" class="PROJECT_dlr_ACTIVE">ReTRI</a></li>
+              <li><a href="puma.html" class="PROJECT_PUMA_ACTIVE">PUMA</a></li>
+              <li><a href="fomo.html" class="PROJECT_FOMO_ACTIVE">FOMO</a></li>
               <li><a href="forrest.html" class="PROJECT_FORREST_ACTIVE">Forrest</a></li>
               <li><a href="forensic_gaussian.html" class="PROJECT_FORENSIC_GAUSSIAN_ACTIVE">ForensicGaussian</a></li>
               <li><a href="magdrop4.html" class="PROJECT_MAGDROP4_ACTIVE">MagDrop4</a></li>
@@ -94,13 +103,13 @@
           </button>
           <div class="carousel-container">
             <div class="carousel-track">
-              <img src="../assets/img/projects/magdrop4.png" alt="MagDrop4 Project" class="carousel-slide active">
-              <img src="../assets/img/projects/magdrop4_InGame_Image1.jpg" alt="MagDrop4 Project" class="carousel-slide">
-              <img src="../assets/img/projects/magdrop4_demo.gif" alt="MagDrop4 Project" class="carousel-slide">
-              <img src="../assets/img/projects/magdrop4_BackofMagDrop4_Image.jpg" alt="MagDrop4 Project" class="carousel-slide">
-              <img src="../assets/img/projects/magdrop4_Magazine_Render_2.png" alt="MagDrop4 Project" class="carousel-slide">
-              <img src="../assets/img/projects/magdrop4_GantryCart_Render.png" alt="MagDrop4 Project" class="carousel-slide">
-              <img src="../assets/img/projects/magdrop4_FSM_final.png" alt="MagDrop4 Project" class="carousel-slide">
+              <img src="../assets/img/projects/magdrop4.png" alt="CAD render of the MagDrop4 Connect Four robot" class="carousel-slide active" width="1106" height="1080">
+              <img src="../assets/img/projects/magdrop4_InGame_Image1.jpg" alt="MagDrop4 machine mid-game on the workbench with pieces placed on the board" class="carousel-slide" width="1918" height="1080" loading="lazy">
+              <img src="../assets/img/projects/magdrop4_demo.webp" alt="Animated demo of MagDrop4 placing a game piece during a match" class="carousel-slide" width="640" height="360" loading="lazy">
+              <img src="../assets/img/projects/magdrop4_BackofMagDrop4_Image.jpg" alt="Rear view of MagDrop4 showing the wiring, breadboard, and Raspberry Pi controller" class="carousel-slide" width="3840" height="2160" loading="lazy">
+              <img src="../assets/img/projects/magdrop4_Magazine_Render_2.png" alt="CAD render of the MagDrop4 game piece storage magazine" class="carousel-slide" width="1920" height="1080" loading="lazy">
+              <img src="../assets/img/projects/magdrop4_GantryCart_Render.png" alt="CAD render of the MagDrop4 gantry cart with electromagnet gripper and limit switch" class="carousel-slide" width="1920" height="1080" loading="lazy">
+              <img src="../assets/img/projects/magdrop4_FSM_final.png" alt="Finite state machine diagram of the MagDrop4 game logic" class="carousel-slide" width="3516" height="3538" loading="lazy">
             </div>
           </div>
           <button class="carousel-button next" aria-label="Next image">

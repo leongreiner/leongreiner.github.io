@@ -5,13 +5,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="HTML5 website template">
-  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="description" content="Robotics and computer vision projects by Leon Greiner: ROS2 quadruped deployments, Gaussian-splatting 3D reconstruction, humanoid locomotion RL, and CAD-based object detection.">
   <meta name="author" content="Leon Greiner">
+  <link rel="canonical" href="https://leongreiner.github.io/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects – Leon Greiner">
+  <meta property="og:description" content="Robotics and computer vision projects by Leon Greiner: ROS2 quadruped deployments, Gaussian-splatting 3D reconstruction, humanoid locomotion RL, and CAD-based object detection.">
+  <meta property="og:url" content="https://leongreiner.github.io/projects.html">
+  <meta property="og:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects – Leon Greiner">
+  <meta name="twitter:description" content="Robotics and computer vision projects by Leon Greiner: ROS2 quadruped deployments, Gaussian-splatting 3D reconstruction, humanoid locomotion RL, and CAD-based object detection.">
+  <meta name="twitter:image" content="https://leongreiner.github.io/assets/img/og-cover.png">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="494x494" href="assets/img/favicon.png">
-  <a href="https://www.vecteezy.com/free-vector/robot-arm-icon">Robot Arm Icon Vectors by Vecteezy</a>
+  <style>
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </head>
 <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RQ0SD58C0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0RQ0SD58C0'); </script>
 <body>
@@ -26,7 +47,7 @@
             </a>
             <div class="dropdown-content">
                 <a href="projects/puma.html">PUMA</a>
-                <a href="projects/dlr.html">ReTRI</a>
+                <a href="projects/fomo.html">FOMO</a>
                 <a href="projects/forrest.html">Forrest</a>
                 <a href="projects/forensic_gaussian.html">ForensicGaussian</a>
                 <a href="projects/magdrop4.html">MagDrop4</a>
@@ -73,11 +94,12 @@
         <h1 class="page-title">Projects</h1>
         <p class="projects--intro">Here are some of the meaningful projects I've worked on throughout my academic and professional journey. Each represents a unique challenge and demonstrates my skills in different areas of robotics and engineering.</p>
       </div>
+      <h2 class="visually-hidden">Featured Projects</h2>
       <div class="projects--grid">
 
         <a href="projects/puma.html" class="projects--item">
             <div class="thumbnail">
-              <img src="assets/img/projects/puma.png" alt="PUMA Project">
+              <img src="assets/img/projects/puma.png" alt="PUMA Project" width="1782" height="1782" loading="lazy">
             </div>
             <div class="content">
               <div class="title-row">
@@ -94,20 +116,23 @@
             </div>
         </a>
 
-        <a href="projects/dlr.html" class="projects--item">
+        <a href="projects/fomo.html" class="projects--item">
             <div class="thumbnail">
-              <img src="assets/img/projects/unknown.png" alt="Template-to-Real Image Segmentation">
+              <img src="assets/img/projects/fomo_coverfig.png" alt="FOMO correctly detecting four target objects from their 3D CAD models, versus a baseline approach mis-scoring one" width="1400" height="722" loading="lazy">
             </div>
             <div class="content">
               <div class="title-row">
-                <h3>ReTRI</h3>
-                <span class="year">2025</span>
+                <h3>FOMO</h3>
+                <span class="year">2026</span>
               </div>
-              <p>A transformer based model that uses rendered templates from CAD models to extract a three-dimensional
-                feature representation, enabling precise object segmentation in real-world images.</p>
+              <p>Developed as part of my master's thesis at DLR, FOMO is an end-to-end transformer architecture
+                for zero-shot object detection conditioned on rendered CAD templates, requiring no retraining for
+                new objects. It reaches 54.2 mean AP on the BOP-Classic-Core benchmark while running 7x faster
+                than the top-ranked method.</p>
               <div class="tags">
                 <span>Computer Vision</span>
                 <span>Transformer</span>
+                <span>Zero-Shot Detection</span>
                 <span>DLR</span>
               </div>
             </div>
@@ -115,7 +140,7 @@
 
         <a href="projects/forrest.html" class="projects--item">
             <div class="thumbnail">
-              <img src="assets/img/projects/forrest_render_1.png" alt="Forrest Project">
+              <img src="assets/img/projects/forrest_render_1.png" alt="Forrest Project" width="954" height="537" loading="lazy">
             </div>
             <div class="content">
               <div class="title-row">
@@ -134,7 +159,7 @@
 
         <a href="projects/forensic_gaussian.html" class="projects--item">
             <div class="thumbnail">
-              <img src="assets/img/projects/forensicgaussian_visual_3DGS_illustration.png" alt="ForensicGaussian Project">
+              <img src="assets/img/projects/forensicgaussian_visual_3DGS_illustration.png" alt="ForensicGaussian Project" width="720" height="651" loading="lazy">
             </div>
             <div class="content">
               <div class="title-row">
@@ -154,7 +179,7 @@
 
         <a href="projects/magdrop4.html" class="projects--item">
           <div class="thumbnail">
-            <img src="assets/img/projects/magdrop4.png" alt="MagDrop4 Project">
+            <img src="assets/img/projects/magdrop4.png" alt="MagDrop4 Project" width="1106" height="1080" loading="lazy">
           </div>
           <div class="content">
             <div class="title-row">
@@ -177,7 +202,7 @@
 
         <a href="projects/walt.html" class="projects--item">
           <div class="thumbnail">
-            <img src="assets/img/projects/walt.png" alt="WALT Project">
+            <img src="assets/img/projects/walt.png" alt="WALT Project" width="786" height="559" loading="lazy">
           </div>
           <div class="content">
             <div class="title-row">
@@ -199,7 +224,7 @@
 
         <a href="projects/area.html" class="projects--item">
           <div class="thumbnail">
-            <img src="assets/img/projects/area.png" alt="AREA Project">
+            <img src="assets/img/projects/area.png" alt="AREA Project" width="2560" height="1440" loading="lazy">
           </div>
           <div class="content">
             <div class="title-row">
@@ -221,7 +246,7 @@
 
         <a href="projects/dispenser.html" class="projects--item">
             <div class="thumbnail">
-              <img src="assets/img/projects/dispenser_robot.png" alt="Dispener Robot Project">
+              <img src="assets/img/projects/dispenser_robot.png" alt="Dispenser Robot Project" width="952" height="1022" loading="lazy">
             </div>
             <div class="content">
               <div class="title-row">

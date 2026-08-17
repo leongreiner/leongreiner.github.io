@@ -19,3 +19,14 @@
 *
   scrollbar-width: thin
   scrollbar-color: #444 #1a1a1a
+
+// Focus-visible states for keyboard navigation. Covers nav links and the
+// dropdown trigger (.header--nav a), project cards (.projects--item), and
+// carousel controls (.carousel-button) via the generic a/button selectors.
+// Centralized here as a single cross-cutting rule instead of scattering
+// :focus-visible across every module. (.header--cta already has its own
+// &:focus { outline: none } in _header.sass — left alone since that class
+// is unused in any .html page.)
+a:focus-visible, button:focus-visible, .projects--item:focus-visible, .carousel-button:focus-visible
+  outline: 2px solid var(--color-accent)
+  outline-offset: 2px

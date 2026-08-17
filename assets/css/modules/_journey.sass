@@ -1,140 +1,328 @@
-// Variables
-$highlight: rgba(16, 223, 161, 0.8)
-$muted-gray: #bbb
-$white: #fff
+// Desktop layout: two columns, entries in normal flow (newest first).
+//
+// A date-proportional center axis (a vertical line with year markers that
+// each entry was meant to align to) was tried here twice and dropped both
+// times: several roles genuinely overlap in time (a busy stretch of DLR +
+// RoboTUM + Maxwell Robotics + Seal Robotics in late 2025/early 2026), which
+// a single axis can't represent without either unreadably narrow multi-lane
+// cards or a much more elaborate calendar-style layout. Rather than ship an
+// axis that *looks* date-accurate but isn't -- every entry already states
+// its own date range plainly, which is honest and reads fine on its own.
+@media (min-width: 900px)
+  .journey
+    padding: 3rem 2rem 4rem
+    max-width: 90vw
+    margin: 0 auto
 
-.journey
-  padding: 2rem 2rem  // Increased side padding on both sides
-
-  .timeline-container
-    display: flex
-    flex-direction: column
-    gap: 3rem
-    height: auto
-
-  .timeline-center
-    display: none
-
-  .timeline-column
-    padding-top: 0
-    min-height: auto
-    overflow: visible
-    position: relative
-    margin-bottom: 2rem  // Add spacing between columns
-
-    h2
+    .timeline-container
+      display: grid
+      grid-template-columns: 1fr 1fr
+      gap: 3rem
       position: relative
-      top: 0
-      margin-bottom: 2rem
-      text-align: left
-      color: $highlight
-      font-size: 1.8rem
+      min-height: 600px // Safety net so this can never collapse to 0
+      margin-top: 80px // Space below headers
 
-    .entry
-      position: relative  // Force relative positioning
-      width: 100%
-      max-width: 100%  // Ensure entries don't overflow
-      box-sizing: border-box  // Include padding in width calculation
-      left: auto
-      right: auto
-      text-align: left
-      margin-bottom: 1.5rem
-      height: auto !important  // Override the JS-set height
-      background: rgba(70, 130, 180, 0.4)  // Explicitly maintain the background
-      border-radius: 8px  // Maintain border radius
-      padding: 0.8rem 1.2rem  // Maintain padding
-      
-      .content
-        // Maintain all content styling
-        .place
-          color: $highlight
-          font-size: 1.1rem
-          font-weight: bold
-          margin: 0.2rem 0
-          
-        .description
-          color: $muted-gray
-          font-size: 0.9rem
-          margin: 0.2rem 0 0.8rem
-          
-        .skills
-          display: flex
-          gap: 0.4rem
-          flex-wrap: wrap
-          margin-top: 0.5rem
-          
-          span
-            border: 1px solid $highlight
-            padding: 0.2rem 0.6rem
-            border-radius: 4px
-            font-size: 0.8rem
+    .timeline-column
+      position: relative
+      padding-top: 60px // Space for the header (h2)
+      min-height: 600px // Ensure enough space for entries
+      overflow: visible
 
-    // Grouped entry (multiple roles at one company)
-    .entry.entry-group
-      .content
-        > .place
-          margin-bottom: 0.1rem
+      h2
+        color: $highlight
+        font-size: 2rem
+        margin-bottom: 3rem
+        text-align: center
+        position: absolute
+        top: -100px // Move headers up
+        width: 100%
 
-        .entry-date-overall
-          display: block
-          color: $muted-gray
-          font-size: 0.85rem
-          margin-bottom: 0.8rem
+      .entry
+        position: absolute
+        width: calc(100% - 4rem)
+        background: rgba(70, 130, 180, 0.4)
+        border-radius: 8px
+        padding: 0.8rem 1.2rem
+        box-sizing: border-box
+        transition: all 0.3s ease
+        min-height: 50px
+        margin-bottom: 2rem
 
-        .sub-entry
-          border-left: 2px solid rgba($highlight, 0.4)
-          padding-left: 0.8rem
-          margin-bottom: 0.8rem
+        .content
+          .title-row
+            display: flex
+            justify-content: space-between
+            align-items: baseline
+            width: 100%
+            margin-bottom: 0.5rem
 
-          &:last-of-type
-            margin-bottom: 0.4rem
+            h3
+              font-size: 1.2rem
+              margin: 0
+              line-height: 1.2
+              color: $white
+              font-weight: bold
 
-          .title-row h3
-            font-size: 1rem
+            .entry-date
+              font-size: 0.9rem
+              color: $muted-gray
+              white-space: nowrap
+              margin-left: 1rem
 
-          .entry-date
-            font-size: 0.8rem
+          .place
+            color: $highlight
+            margin: 0.2rem 0
+            font-size: 1.1rem
+            font-weight: bold
 
           .description
             color: $muted-gray
+            font-size: 0.9rem
+            margin: 0.2rem 0 0.8rem
+
+          .skills
+            display: flex
+            gap: 0.4rem
+            flex-wrap: wrap
+            margin-top: auto
+
+            span
+              padding: 0.2rem 0.6rem
+              border-radius: 4px
+              font-size: 0.8rem
+              background: transparent
+              border: 1px solid $highlight
+
+      // Grouped entry (multiple roles at one company)
+      .entry.entry-group
+        .content
+          > .place
+            margin-bottom: 0.1rem
+
+          .entry-date-overall
+            display: block
+            color: $muted-gray
             font-size: 0.85rem
-            margin: 0.2rem 0 0.4rem
+            margin-bottom: 0.8rem
 
-  // Make sure experience entries align left in mobile view
-  .experience .entry
-    text-align: left
-    right: auto
+          .sub-entry
+            border-left: 2px solid rgba($highlight, 0.4)
+            padding-left: 0.8rem
+            margin-bottom: 0.8rem
 
-    .content .skills
-      justify-content: flex-start
+            &:last-of-type
+              margin-bottom: 0.4rem
 
-    .content .title-row
-      flex-direction: row  // Reset to normal direction for mobile
+            .title-row h3
+              font-size: 1rem
 
-  // Ensure resume button maintains styling
-  .resume-button
-    display: flex
-    justify-content: center
-    margin-top: 2rem
-    padding-top: 2rem
-    border-top: 1px solid rgba($highlight, 0.2)
+            .entry-date
+              font-size: 0.8rem
 
-    a
+            .description
+              color: $muted-gray
+              font-size: 0.85rem
+              margin: 0.2rem 0 0.4rem
+
+    // Positioning for experience entries (left side)
+    .experience
+      .entry
+        right: 2rem
+        text-align: right
+
+        .content .title-row
+          flex-direction: row-reverse // Mirror title/date order
+
+        .content .skills
+          justify-content: flex-end
+
+    // Positioning for education entries (right side)
+    .education
+      .entry
+        left: 2rem
+        text-align: left
+
+        .content .skills
+          justify-content: flex-start
+
+    .resume-button
       display: flex
-      align-items: center
-      padding: 0.8rem 1.5rem
-      background: rgba(70, 130, 180, 0.1)
-      border: 1px solid rgba(70, 130, 180, 0.3)
-      border-radius: 4px
-      color: $white
-      text-decoration: none
-      font-size: 1rem
-      transition: all 0.3s ease
+      justify-content: center
+      margin-top: 3rem
+      padding-top: 2rem
+      border-top: 1px solid rgba($highlight, 0.2)
 
-      &:hover
-        background: rgba(70, 130, 180, 0.2)
-        transform: translateY(-2px)
+      a
+        display: flex
+        align-items: center
+        padding: 0.8rem 1.5rem
+        background: rgba(70, 130, 180, 0.1)
+        border: 1px solid rgba(70, 130, 180, 0.3)
+        border-radius: 4px
+        color: $white
+        text-decoration: none
+        font-size: 1rem
+        transition: all 0.3s ease
 
-      i
-        margin-right: 0.8rem
-        font-size: 1.2rem
+        &:hover
+          background: rgba(70, 130, 180, 0.2)
+          transform: translateY(-2px)
+
+        i
+          margin-right: 0.8rem
+          font-size: 1.2rem
+
+// Medium desktop widths: stack title/date instead of keeping them on one
+// flex row once the entry column gets too narrow.
+@media (min-width: 900px) and (max-width: 1279px)
+  .journey
+    .timeline-column
+      .entry
+        .content
+          .title-row
+            display: block
+
+            h3
+              display: block
+              margin-bottom: 0.3rem
+
+            .entry-date
+              display: block
+              margin-left: 0
+              margin-top: 0.3rem
+              text-align: inherit
+
+// Mobile: single stacked column, entries flow normally.
+@media (max-width: 899px)
+  .journey
+    padding: 2rem 2rem  // Increased side padding on both sides
+
+    .timeline-container
+      display: flex
+      flex-direction: column
+      gap: 3rem
+      height: auto
+
+    .timeline-column
+      padding-top: 0
+      min-height: auto
+      overflow: visible
+      position: relative
+      margin-bottom: 2rem  // Add spacing between columns
+
+      h2
+        position: relative
+        top: 0
+        margin-bottom: 2rem
+        text-align: left
+        color: $highlight
+        font-size: 1.8rem
+
+      .entry
+        position: relative  // Force relative positioning
+        width: 100%
+        max-width: 100%  // Ensure entries don't overflow
+        box-sizing: border-box  // Include padding in width calculation
+        left: auto
+        right: auto
+        text-align: left
+        margin-bottom: 1.5rem
+        height: auto !important  // Override the JS-set height
+        background: rgba(70, 130, 180, 0.4)  // Explicitly maintain the background
+        border-radius: 8px  // Maintain border radius
+        padding: 0.8rem 1.2rem  // Maintain padding
+
+        .content
+          // Maintain all content styling
+          .place
+            color: $highlight
+            font-size: 1.1rem
+            font-weight: bold
+            margin: 0.2rem 0
+
+          .description
+            color: $muted-gray
+            font-size: 0.9rem
+            margin: 0.2rem 0 0.8rem
+
+          .skills
+            display: flex
+            gap: 0.4rem
+            flex-wrap: wrap
+            margin-top: 0.5rem
+
+            span
+              border: 1px solid $highlight
+              padding: 0.2rem 0.6rem
+              border-radius: 4px
+              font-size: 0.8rem
+
+      // Grouped entry (multiple roles at one company)
+      .entry.entry-group
+        .content
+          > .place
+            margin-bottom: 0.1rem
+
+          .entry-date-overall
+            display: block
+            color: $muted-gray
+            font-size: 0.85rem
+            margin-bottom: 0.8rem
+
+          .sub-entry
+            border-left: 2px solid rgba($highlight, 0.4)
+            padding-left: 0.8rem
+            margin-bottom: 0.8rem
+
+            &:last-of-type
+              margin-bottom: 0.4rem
+
+            .title-row h3
+              font-size: 1rem
+
+            .entry-date
+              font-size: 0.8rem
+
+            .description
+              color: $muted-gray
+              font-size: 0.85rem
+              margin: 0.2rem 0 0.4rem
+
+    // Make sure experience entries align left in mobile view
+    .experience .entry
+      text-align: left
+      right: auto
+
+      .content .skills
+        justify-content: flex-start
+
+      .content .title-row
+        flex-direction: row  // Reset to normal direction for mobile
+
+    // Ensure resume button maintains styling
+    .resume-button
+      display: flex
+      justify-content: center
+      margin-top: 2rem
+      padding-top: 2rem
+      border-top: 1px solid rgba($highlight, 0.2)
+
+      a
+        display: flex
+        align-items: center
+        padding: 0.8rem 1.5rem
+        background: rgba(70, 130, 180, 0.1)
+        border: 1px solid rgba(70, 130, 180, 0.3)
+        border-radius: 4px
+        color: $white
+        text-decoration: none
+        font-size: 1rem
+        transition: all 0.3s ease
+
+        &:hover
+          background: rgba(70, 130, 180, 0.2)
+          transform: translateY(-2px)
+
+        i
+          margin-right: 0.8rem
+          font-size: 1.2rem

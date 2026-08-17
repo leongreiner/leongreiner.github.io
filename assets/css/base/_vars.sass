@@ -1,5 +1,18 @@
 // Colors
 $white: #fff
 $black: #0c0c0c
-$highlight: #0f33ff
-$muted-gray: #282828
+$highlight: #10dfa1
+// NOTE: was #282828 (near-black) which is only ever "correct" for the dead
+// .intro--options rule (unused in any .html file). Every live consumer of
+// this variable (imported after this file, e.g. _contact.sass) as well as
+// every hardcoded literal doing the same job across the codebase
+// (_intro.sass, _project_page.sass, _projects.sass) uses #bbb as the real
+// muted-text color on the dark background. Aligning the source of truth to
+// #bbb avoids reintroducing invisible dark-on-dark text once the shadowing
+// re-declaration in _journey.sass is removed.
+$muted-gray: #bbb
+
+:root
+  --color-accent: #10dfa1
+  --color-accent-rgb: 16, 223, 161
+  --color-accent-soft: rgba(16, 223, 161, 0.4)
