@@ -1085,7 +1085,7 @@ body {
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background-image: url("../img/robot1.gif");
+  background-image: url("../img/robot1.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1982,6 +1982,8 @@ a:focus-visible, button:focus-visible, .projects--item:focus-visible, .carousel-
 }
 
 .hamburger-menu {
+  position: relative;
+  z-index: 10000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2037,24 +2039,6 @@ a:focus-visible, button:focus-visible, .projects--item:focus-visible, .carousel-
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
   padding-bottom: 100px;
-}
-.mobile-menu .mobile-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
-  background: transparent;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobile-menu .mobile-close:hover {
-  color: rgba(16, 223, 161, 0.8);
 }
 
 .mobile-nav ul {

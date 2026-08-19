@@ -75,7 +75,6 @@
     <!-- Mobile menu dropdown -->
     <div class="mobile-menu">
       <div class="mobile-menu-container">
-        <button class="mobile-close">&times;</button>
         <nav class="mobile-nav">
           <ul>
             <li><a href="index.html">About Me</a></li>
@@ -276,24 +275,16 @@
       // Hamburger menu toggle
       const hamburgerBtn = document.querySelector('.hamburger-menu');
       const mobileMenu = document.querySelector('.mobile-menu');
-      const closeBtn = document.querySelector('.mobile-close');
       const body = document.body;
-      
-      if (hamburgerBtn && mobileMenu && closeBtn) {
+
+      if (hamburgerBtn && mobileMenu) {
         // Toggle menu when hamburger is clicked
         hamburgerBtn.addEventListener('click', function() {
           hamburgerBtn.classList.toggle('active');
           mobileMenu.classList.toggle('active');
           body.classList.toggle('menu-open');
         });
-        
-        // Close menu when close button is clicked
-        closeBtn.addEventListener('click', function() {
-          hamburgerBtn.classList.remove('active');
-          mobileMenu.classList.remove('active');
-          body.classList.remove('menu-open');
-        });
-        
+
         // Close menu when clicking a menu item
         document.querySelectorAll('.mobile-nav a').forEach(function(link) {
           link.addEventListener('click', function() {

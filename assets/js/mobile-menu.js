@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle menu scrolling issue for iOS
   const hamburgerBtn = document.querySelector('.hamburger-menu');
   const mobileMenu = document.querySelector('.mobile-menu');
-  const closeBtn = document.querySelector('.mobile-close');
   const body = document.body;
   
   // Store scroll position to restore it after menu closes
@@ -40,17 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         body.style.top = '';
         window.scrollTo(0, scrollPosition);
       }
-    });
-  }
-  
-  // Close menu when close button is clicked
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function() {
-      hamburgerBtn.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      body.classList.remove('menu-open');
-      body.style.top = '';
-      window.scrollTo(0, scrollPosition);
     });
   }
   
